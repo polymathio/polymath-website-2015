@@ -1,0 +1,54 @@
+@function base($n, $round: false) {
+  $result: $n * $baseline;
+
+  @if $round == "up" {
+    $result: ceil($result)
+  } @else if $round == "down" {
+    $result: floor($result)
+  }
+
+  @return $result;
+}
+
+@function toPx($n) {
+  $result: 0px + $n;
+  @return $result;
+}
+
+@function toRem($n) {
+  $result: 0rem + $n / $base-font-size;
+  @return $result;
+}
+
+@mixin font($family, $size, $weight) {
+  font:{
+    family: $family;
+    weight: $weight;
+  }
+  @include font-size($size);
+}
+
+@mixin font-size($size) {
+  font-size: toPx($size);
+  font-size: toRem($size);
+}
+
+@function color($c) {
+  @return map-get($color-map, $c);
+}
+
+@function break($size) {
+  @return map-get($breakpoints, $size);
+}
+
+@mixin clearfix {
+  &:before, &:after {
+    content: "";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+      clear: both;
+  }
+}

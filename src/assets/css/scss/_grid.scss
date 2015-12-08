@@ -1,0 +1,41 @@
+// Namespaces
+$grid-namespace: "grid";
+$grid-column-namespace: "col";
+
+// Gutter width
+$gutter-width: 20px;
+$cols: 12;
+
+.#{$grid-namespace} {
+
+  margin-left: -$gutter-width;
+  text-align: left;
+
+  %col {
+    box-sizing: border-box;
+    display: inline-block;
+    margin-right: -4px;
+    padding-left: $gutter-width;
+    min-height: 1px;
+    vertical-align: top;
+  }
+
+  @for $i from 1 through $cols {
+    $width: (100% / $cols) * $i;
+
+    .#{$grid-column-namespace}-#{$i} {
+      @extend %col;
+      width: $width + 0%;
+    }
+
+    .#{$grid-column-namespace}--push-#{$i} {
+      margin-left: $width + 0%;
+    }
+  }
+  
+  .#{$grid-column-namespace}--centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

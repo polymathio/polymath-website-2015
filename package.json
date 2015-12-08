@@ -1,0 +1,43 @@
+{
+  "name": "batter-gulp",
+  "version": "0.0.1",
+  "description": "Boilerplate with Gulp, Sass, Nunjucks",
+  "author": "Jon Ambas [ambasp@gmail.com, @jonshungry]",
+  "license": "MIT",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pambas/batter-gulp.git"
+  },
+  "keywords": [
+    "gulp",
+    "sass",
+    "boilerplate"
+  ],
+  "devDependencies": {
+    "babel-core": "^6.3.15",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "browser-sync": "^2.5.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-minify-css": "^0.5.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-nunjucks-render": "^0.1.3",
+    "gulp-rename": "^1.2.0",
+    "gulp-ruby-sass": "^1.0.0-alpha.3",
+    "gulp-uglify": "^1.1.0",
+    "gulp-util": "~3.0.7",
+    "jquery": "^2.1.4",
+    "require-dir": "~0.3.0",
+    "webpack": "^1.12.2"
+  },
+  "dependencies": {
+    "jquery": "^2.1.4"
+  }
+}
