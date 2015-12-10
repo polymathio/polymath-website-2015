@@ -1,6 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700);
-
-$open-sans: 'Open Sans', sans-serif;
+$museo: 'museo-sans', sans-serif;
 
 html {
   color: color(text);
@@ -8,8 +6,10 @@ html {
 }
 
 body {
-  line-height: 1.8em;
-  @include font($open-sans, $base-font-size, 300);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.667em;
+  @include font($museo, $base-font-size, 300);
 }
 
 ::selection {
@@ -23,19 +23,28 @@ body {
   margin-bottom: 1rem;
   text-rendering: optimizeLegibility;
   color:  color(text);
+  letter-spacing: 0.1em;
   line-height: 1.1em;
-  @include font($open-sans, 16, 300);
+  @include font($museo, 16, 300);
   &::selection{
     //color: #000;
   }
 }
 
 //Header Sizing
-$headers: (h1: 48, h2: 40, h3: 32, h4: 28, h5: 22, h6: 16);
+$headers: (h1: 64, h2: 48, h3: 32, h4: 28, h5: 22, h6: 16);
 
 @each $header, $size in $headers {
   #{$header} {
     @extend %header;
     @include font-size($size);
   }
+}
+
+p {
+  letter-spacing: 0.07em;
+}
+
+a {
+  transition: 0.2s;
 }

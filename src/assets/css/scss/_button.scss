@@ -1,0 +1,17 @@
+.button {
+  display: inline-block;
+  padding: 0.7em 1em;
+
+  border: 2px solid color(green);
+  color: color(green);
+
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  &:hover, &:active, &:focus {
+    background: color(green);
+    color: color(white);
+  }
+}

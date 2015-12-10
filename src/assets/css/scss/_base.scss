@@ -4,3 +4,17 @@ pre,table,fieldset,hr {
   margin-top: 0;
   margin-bottom: base(1);
 }
+
+
+html, body {
+  position: relative;
+  height: 100%;
+}
+
+html {
+  background-color: color(white);
+}
+
+body {
+  padding: $panel-gutters;
+}

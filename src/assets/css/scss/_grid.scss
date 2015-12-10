@@ -3,7 +3,7 @@ $grid-namespace: "grid";
 $grid-column-namespace: "col";
 
 // Gutter width
-$gutter-width: 20px;
+$gutter-width: $panel-gutters;
 $cols: 12;
 
 .#{$grid-namespace} {

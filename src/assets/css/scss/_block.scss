@@ -1,0 +1,21 @@
+.block {
+  position: relative;
+  margin-bottom: $panel-gutters;
+  padding: 2rem;
+
+  &--auto {
+  }
+
+  &--full {
+    height: 100%;
+    padding: 0;
+  }
+
+  &--dark {
+    @include _block;
+  }
+
+  &--gray {
+    background: color(gray);
+  }
+}

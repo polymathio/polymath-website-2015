@@ -2,9 +2,12 @@ $baseline: 16px;
 $base-font-size: 16;
 
 $color-map: (
-  white:      whitesmoke,
-  black:      #1e2027,
-  text:       #3a3a3a
+  white:      #ffffff,
+  black:      #1C1D27,
+  text:       #1C1D27,
+  green:      #90C4B3,
+  blue:       #00A1E4,
+  gray:       #F2F3F4
 );
 
 $breakpoints: (
@@ -14,3 +17,6 @@ $breakpoints: (
   s:  640px,
   xs: 500px
 );
+
+// Controls borders between panels
+$panel-gutters: 1.5rem;
