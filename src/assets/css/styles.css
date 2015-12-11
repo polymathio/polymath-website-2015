@@ -608,6 +608,9 @@ a {
 .block--gray {
   background: #F2F3F4;
 }
+.block--green {
+  background: #90C4B3;
+}
 .block--third {
   min-height: 560px;
 }
