@@ -50,9 +50,20 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
+	var _events = __webpack_require__(2);
+
+	var _events2 = _interopRequireDefault(_events);
+
+	var _inlineSizer = __webpack_require__(5);
+
+	var _inlineSizer2 = _interopRequireDefault(_inlineSizer);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	(0, _jquery2.default)(document).ready(function () {});
+	(0, _jquery2.default)(document).ready(function () {
+	  //events.init();
+	  _inlineSizer2.default.init();
+	});
 
 /***/ },
 /* 1 */
@@ -9269,6 +9280,250 @@
 
 	}));
 
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _jquery = __webpack_require__(1);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _microevent = __webpack_require__(3);
+
+	var _microevent2 = _interopRequireDefault(_microevent);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var events = {
+	  init: function init() {
+	    var _this = this;
+
+	    _microevent2.default.mixin(this);
+
+	    (0, _jquery2.default)(window).load(function () {
+	      return _this.trigger('load');
+	    });
+	    this.bind('load', this.load);
+	  },
+	  load: function load() {
+	    console.log('loaded!');
+	  }
+	};
+
+	exports.default = events;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {'use strict';
+
+	var MicroEvent = function MicroEvent() {};
+	MicroEvent.prototype = {
+	  bind: function bind(event, fct) {
+	    this._events = this._events || {};
+	    this._events[event] = this._events[event] || [];
+	    this._events[event].push(fct);
+	  },
+	  unbind: function unbind(event, fct) {
+	    this._events = this._events || {};
+	    if (event in this._events === false) return;
+	    this._events[event].splice(this._events[event].indexOf(fct), 1);
+	  },
+	  trigger: function trigger(event /* , args... */) {
+	    this._events = this._events || {};
+	    if (event in this._events === false) return;
+	    for (var i = 0; i < this._events[event].length; i++) {
+	      this._events[event][i].apply(this, Array.prototype.slice.call(arguments, 1));
+	    }
+	  }
+	};
+
+	MicroEvent.mixin = function (destObject) {
+	  var props = ['bind', 'unbind', 'trigger'];
+	  for (var i = 0; i < props.length; i++) {
+	    if (typeof destObject === 'function') {
+	      destObject.prototype[props[i]] = MicroEvent.prototype[props[i]];
+	    } else {
+	      destObject[props[i]] = MicroEvent.prototype[props[i]];
+	    }
+	  }
+	  return destObject;
+	};
+
+	// export in common js
+	if (typeof module !== "undefined" && 'exports' in module) {
+	  module.exports = MicroEvent;
+	}
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	module.exports = function(module) {
+		if(!module.webpackPolyfill) {
+			module.deprecate = function() {};
+			module.paths = [];
+			// module.parent = undefined by default
+			module.children = [];
+			module.webpackPolyfill = 1;
+		}
+		return module;
+	}
+
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _jquery = __webpack_require__(1);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _microevent = __webpack_require__(3);
+
+	var _microevent2 = _interopRequireDefault(_microevent);
+
+	var _throttle = __webpack_require__(6);
+
+	var _throttle2 = _interopRequireDefault(_throttle);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var inlineSizer = {
+	  init: function init() {
+	    this._cacheDom();
+	    this._buildGroups();
+	    this._bindEvents();
+	  },
+	  _cacheDom: function _cacheDom() {
+	    this.$blocks = (0, _jquery2.default)('.js-block');
+	  },
+	  _bindEvents: function _bindEvents() {
+	    (0, _jquery2.default)(window).on('resize', _jquery2.default.throttle(150, this._handleResize.bind(this)));
+	  },
+	  _buildGroups: function _buildGroups() {
+	    var _this = this;
+
+	    this.blocks = {};
+
+	    this.$blocks.each(function (i) {
+	      var block = (0, _jquery2.default)(_this.$blocks[i]),
+	          group = block.data('group');
+
+	      if (_this.blocks[group]) {
+	        _this.blocks[group].push(block);
+	      } else {
+	        _this.blocks[group] = [block];
+	      }
+	    });
+
+	    this._handleResize();
+	  },
+	  _handleResize: function _handleResize() {
+	    this.$blocks.css({ 'height': 'auto' });
+	    for (var group in this.blocks) {
+	      var blocks = this.blocks[group],
+	          max = this.getMax(blocks);
+
+	      for (var i = 0; i < blocks.length; i++) {
+	        if (blocks[i].outerHeight() < max) {
+	          blocks[i].css({ 'height': max + 'px' });
+	        }
+	      };
+	    }
+	  },
+	  getMax: function getMax(blocks) {
+	    var max = 0;
+	    for (var i = 0; i < blocks.length; i++) {
+	      max = blocks[i].outerHeight() > max ? blocks[i].outerHeight() : max;
+	    };
+
+	    return max;
+	  }
+	};
+
+	exports.default = inlineSizer;
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _jquery = __webpack_require__(1);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	(function (window, undefined) {
+	  '$:nomunge';
+
+	  var jq_throttle;
+
+	  _jquery2.default.throttle = jq_throttle = function (delay, no_trailing, callback, debounce_mode) {
+	    var timeout_id,
+	        last_exec = 0;
+
+	    if (typeof no_trailing !== 'boolean') {
+	      debounce_mode = callback;
+	      callback = no_trailing;
+	      no_trailing = undefined;
+	    }
+
+	    function wrapper() {
+	      var that = this,
+	          elapsed = +new Date() - last_exec,
+	          args = arguments;
+
+	      function exec() {
+	        last_exec = +new Date();
+	        callback.apply(that, args);
+	      };
+
+	      function clear() {
+	        timeout_id = undefined;
+	      };
+
+	      if (debounce_mode && !timeout_id) {
+	        exec();
+	      }
+
+	      timeout_id && clearTimeout(timeout_id);
+
+	      if (debounce_mode === undefined && elapsed > delay) {
+	        exec();
+	      } else if (no_trailing !== true) {
+	        timeout_id = setTimeout(debounce_mode ? clear : exec, debounce_mode === undefined ? delay - elapsed : delay);
+	      }
+	    };
+
+	    if (_jquery2.default.guid) {
+	      wrapper.guid = callback.guid = callback.guid || _jquery2.default.guid++;
+	    }
+
+	    return wrapper;
+	  };
+
+	  _jquery2.default.debounce = function (delay, at_begin, callback) {
+	    return callback === undefined ? jq_throttle(delay, at_begin, false) : jq_throttle(delay, callback, at_begin !== false);
+	  };
+	})(undefined);
 
 /***/ }
 /******/ ]);

@@ -1,5 +1,9 @@
 import $ from 'jquery';
 
-$(document).ready(function() {
-  
+import events from './events';
+import inlineSizer from'./inlineSizer';
+
+$(document).ready( () => {
+  //events.init();
+  inlineSizer.init();
 });

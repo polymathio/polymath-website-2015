@@ -3,19 +3,26 @@
   margin-bottom: $panel-gutters;
   padding: 2rem;
 
-  &--auto {
-  }
-
-  &--full {
+  &--hero {
     height: 100%;
-    padding: 0;
   }
 
   &--dark {
-    @include _block;
+    background: rgba(color(black), 0.9);
   }
 
   &--gray {
     background: color(gray);
+  }
+
+  &--third {
+    min-height: 560px;
+  }
+
+  &__bottom {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
   }
 }
