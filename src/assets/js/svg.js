@@ -24,9 +24,9 @@ let svg = {
       var strokeLength = holder[i].getTotalLength();
       
       holder[i].style.strokeDasharray =  strokeLength + ' ' + strokeLength;
-      holder[i].style.strokeDashoffset =  strokeLength;
+      holder[i].style.strokeDashoffset =  -strokeLength;
 
-      TweenMax.to(holder[i], transition, { strokeDashoffset: strokeLength * 2, ease: Power2.easeOut, delay: delay * i });
+      TweenMax.to(holder[i], transition, { strokeDashoffset: -strokeLength * 2, ease: Power2.easeOut, delay: delay * i });
     };
   }
 };
