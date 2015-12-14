@@ -29,4 +29,9 @@
     left: 2rem;
     right: 2rem;
   }
+
+  &__svg-wrapper {
+    position: relative; 
+    text-align: center;
+  }
 }

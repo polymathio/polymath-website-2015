@@ -58,11 +58,16 @@
 
 	var _inlineSizer2 = _interopRequireDefault(_inlineSizer);
 
+	var _svg = __webpack_require__(7);
+
+	var _svg2 = _interopRequireDefault(_svg);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _jquery2.default)(document).ready(function () {
 	  //events.init();
 	  _inlineSizer2.default.init();
+	  _svg2.default.init();
 	});
 
 /***/ },
@@ -9527,6 +9532,52 @@
 	    return callback === undefined ? jq_throttle(delay, at_begin, false) : jq_throttle(delay, callback, at_begin !== false);
 	  };
 	})(undefined);
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _jquery = __webpack_require__(1);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var svg = {
+	  init: function init() {
+	    this.cacheDom();
+	    this.start();
+	  },
+	  cacheDom: function cacheDom() {
+	    this.design = '#svg--design';
+	  },
+	  start: function start() {
+	    this._drawSVG(this.design, 1, 0.07, 0);
+	  },
+	  _drawSVG: function _drawSVG(svg, transition, delay, timeout) {
+	    var holder = [];
+	    var pathCount = (0, _jquery2.default)(svg + " path").length;
+
+	    for (var i = 0; i < pathCount; i++) {
+	      holder[i] = document.querySelector(svg + ' path:nth-child(' + (i + 1) + ')');
+
+	      var strokeLength = holder[i].getTotalLength();
+
+	      holder[i].style.strokeDasharray = strokeLength + ' ' + strokeLength;
+	      holder[i].style.strokeDashoffset = strokeLength;
+
+	      TweenMax.to(holder[i], transition, { strokeDashoffset: strokeLength * 2, ease: Power2.easeOut, delay: delay * i });
+	    };
+	  }
+	};
+
+	exports.default = svg;
 
 /***/ }
 /******/ ]);

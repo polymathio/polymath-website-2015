@@ -594,6 +594,7 @@ p, input, textarea, a {
 }
 
 a {
+  color: #1C1D27;
   -webkit-transition: 0.2s;
           transition: 0.2s;
 }
@@ -627,6 +628,10 @@ strong {
   bottom: 2rem;
   left: 2rem;
   right: 2rem;
+}
+.block__svg-wrapper {
+  position: relative;
+  text-align: center;
 }
 
 .footer__social-list {
@@ -773,6 +778,9 @@ strong {
 .t-white {
   color: #ffffff;
 }
+.t-white a {
+  color: #ffffff;
+}
 
 .t-black {
   color: #1C1D27;
@@ -792,6 +800,10 @@ strong {
 
 .t-more-muted {
   opacity: 0.67;
+}
+
+.t-no-underline {
+  text-decoration: none;
 }
 
 .container {
@@ -1239,4 +1251,21 @@ Box Helpers
 .padding--lr-7 {
   padding-left: 7rem;
   padding-right: 7rem;
+}
+
+.svg--design {
+  display: inline-block;
+  height: auto;
+  width: 100%;
+  margin: 2rem auto 10rem;
+}
+.svg--design .blueprint {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 1px;
+}
+.svg--design .rocket {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.8);
+  stroke-width: 2px;
 }

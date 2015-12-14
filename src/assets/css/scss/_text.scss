@@ -8,6 +8,9 @@
 
 .t-white {
   color: color(white);
+  a {
+    color: color(white);
+  }
 }
 
 .t-black {
@@ -28,4 +31,8 @@
 
 .t-more-muted {
   opacity: 0.67;
+}
+
+.t-no-underline {
+  text-decoration: none;
 }

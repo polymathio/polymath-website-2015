@@ -1,0 +1,22 @@
+.svg--design {
+  display: inline-block;
+  height: auto;
+  width: 100%;
+  margin: 2rem auto 10rem;
+
+  .blueprint {
+    fill: none;
+    stroke: rgba(#fff, 0.2);
+    stroke-width: 1px;
+  }
+
+  .rocket {
+    fill: none;
+    stroke: rgba(#fff, 0.8);
+    stroke-width: 2px;
+  }
+
+  path {
+
+  }
+}
