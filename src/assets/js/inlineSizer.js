@@ -35,10 +35,10 @@ let inlineSizer = {
   },
 
   _handleResize() {
-    this.$blocks.css({ 'height': `auto`});
+    this.setToAuto();
     for ( let group in this.blocks ) {
       let blocks = this.blocks[group],
-          max = this.getMax(blocks);
+          max = this._getMax(blocks);
           
       for (let i = 0; i < blocks.length; i++) {
         if (blocks[i].outerHeight() < max) {
@@ -48,13 +48,17 @@ let inlineSizer = {
     }
   },
 
-  getMax(blocks) {
+  _getMax(blocks) {
     let max = 0;
     for (let i = 0; i < blocks.length; i++) {
       max = blocks[i].outerHeight() > max ? blocks[i].outerHeight() : max;
     };
 
     return max;
+  },
+
+  setToAuto() {
+    this.$blocks.css({ 'height': 'auto'});
   }
 }
 

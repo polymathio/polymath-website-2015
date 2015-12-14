@@ -9435,10 +9435,10 @@
 	    this._handleResize();
 	  },
 	  _handleResize: function _handleResize() {
-	    this.$blocks.css({ 'height': 'auto' });
+	    this.setToAuto();
 	    for (var group in this.blocks) {
 	      var blocks = this.blocks[group],
-	          max = this.getMax(blocks);
+	          max = this._getMax(blocks);
 
 	      for (var i = 0; i < blocks.length; i++) {
 	        if (blocks[i].outerHeight() < max) {
@@ -9447,13 +9447,16 @@
 	      };
 	    }
 	  },
-	  getMax: function getMax(blocks) {
+	  _getMax: function _getMax(blocks) {
 	    var max = 0;
 	    for (var i = 0; i < blocks.length; i++) {
 	      max = blocks[i].outerHeight() > max ? blocks[i].outerHeight() : max;
 	    };
 
 	    return max;
+	  },
+	  setToAuto: function setToAuto() {
+	    this.$blocks.css({ 'height': 'auto' });
 	  }
 	};
 

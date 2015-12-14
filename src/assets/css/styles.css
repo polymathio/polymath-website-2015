@@ -425,6 +425,10 @@ body {
   padding: 1.5rem;
 }
 
+textarea:focus, input:focus {
+  outline: 0;
+}
+
 .grid {
   margin-left: -1.5rem;
   text-align: left;
@@ -585,13 +589,17 @@ h6 {
   font-size: 1rem;
 }
 
-p {
+p, input, textarea, a {
   letter-spacing: 0.07em;
 }
 
 a {
   -webkit-transition: 0.2s;
           transition: 0.2s;
+}
+
+strong {
+  font-weight: 400;
 }
 
 .block {
@@ -619,6 +627,97 @@ a {
   bottom: 2rem;
   left: 2rem;
   right: 2rem;
+}
+
+.footer__social-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+.footer__social-list li {
+  display: inline-block;
+}
+.footer__svg {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+  fill: #515762;
+  -webkit-transition: 0.15s;
+          transition: 0.15s;
+}
+.footer__svg:hover, .footer__svg:active, .footer__svg:focus {
+  fill: #1C1D27;
+}
+.footer__svg--vimeo {
+  margin-right: 1rem;
+}
+.footer__newsletter-form {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.footer__newsletter-fieldset {
+  border: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+.footer__newsletter-input {
+  -webkit-appearance: none;
+  border: none;
+  padding: 0.6rem 1rem 0.6rem 0rem;
+  margin-right: -4px;
+  border-bottom: 1px solid #515762;
+  background: transparent;
+  color: #515762;
+  -webkit-transition: background 0.15s;
+          transition: background 0.15s;
+  -webkit-transition: padding 0.2s;
+          transition: padding 0.2s;
+}
+.footer__newsletter-input:active, .footer__newsletter-input:focus {
+  background: #ffffff;
+  padding-left: 1rem;
+  box-shadow: 4px 6px 16px rgba(28, 29, 39, 0.19);
+}
+.footer__newsletter-input:active ~ .footer__newsletter-submit, .footer__newsletter-input:focus ~ .footer__newsletter-submit {
+  opacity: 1;
+  box-shadow: 4px 6px 16px rgba(28, 29, 39, 0.19);
+  pointer-events: auto;
+}
+.footer__newsletter-submit {
+  padding: 0.6rem 1rem;
+  font-weight: 400;
+  background: #515762;
+  color: #ffffff;
+  border: none;
+  border-bottom: 1px solid #515762;
+  -webkit-transition: 0.1s;
+          transition: 0.1s;
+  opacity: 0;
+  pointer-events: none;
+}
+.footer__newsletter-submit:hover, .footer__newsletter-submit:active, .footer__newsletter-submit:focus {
+  opacity: 1;
+  box-shadow: 4px 6px 16px rgba(28, 29, 39, 0.19);
+  background: #90C4B3;
+  border-bottom: 1px solid #90C4B3;
+  pointer-events: auto;
+}
+.footer ::-webkit-input-placeholder {
+  color: #515762;
+}
+.footer :-moz-placeholder {
+  /* Firefox 18- */
+  color: #515762;
+}
+.footer ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #515762;
+}
+.footer :-ms-input-placeholder {
+  color: #515762;
+}
+.footer h6 {
+  color: #515762;
 }
 
 .button {

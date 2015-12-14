@@ -41,10 +41,14 @@ $headers: (h1: 64, h2: 48, h3: 32, h4: 28, h5: 22, h6: 16);
   }
 }
 
-p {
+p, input, textarea, a {
   letter-spacing: 0.07em;
 }
 
 a {
   transition: 0.2s;
+}
+
+strong {
+  font-weight: 400;
 }

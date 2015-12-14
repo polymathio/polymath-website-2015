@@ -18,3 +18,7 @@ html {
 body {
   padding: $panel-gutters;
 }
+
+textarea:focus, input:focus{
+  outline: 0;
+}
