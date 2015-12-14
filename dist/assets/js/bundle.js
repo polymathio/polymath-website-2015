@@ -9556,9 +9556,12 @@
 	  },
 	  cacheDom: function cacheDom() {
 	    this.design = '#svg--design';
+	    this.largeFlame = (0, _jquery2.default)('#svg--deploy .fire1');
+	    this.smallFlame = (0, _jquery2.default)('#svg--deploy .fire2');
 	  },
 	  start: function start() {
 	    this._drawSVG(this.design, 1, 0.07, 0);
+	    this._loopFire();
 	  },
 	  _drawSVG: function _drawSVG(svg, transition, delay, timeout) {
 	    var holder = [];
@@ -9574,6 +9577,12 @@
 
 	      TweenMax.to(holder[i], transition, { strokeDashoffset: -strokeLength * 2, ease: Power2.easeOut, delay: delay * i });
 	    };
+	  },
+	  _loopFire: function _loopFire() {
+	    //yoyo
+
+	    TweenMax.to(this.smallFlame, 0.4, { scaleX: 0.95, y: '-12px', x: '3%', repeat: -1, yoyo: true, ease: Power0.easeNone });
+	    TweenMax.to(this.largeFlame, 0.4, { scaleX: 0.9, y: '-10px', x: '6%', repeat: -1, yoyo: true, ease: Power0.easeNone });
 	  }
 	};
 
