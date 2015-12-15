@@ -632,6 +632,7 @@ strong {
 .block__svg-wrapper {
   position: relative;
   text-align: center;
+  height: 60%;
 }
 
 .footer__social-list {
@@ -1256,7 +1257,8 @@ Box Helpers
 .svg--design {
   display: inline-block;
   height: auto;
-  width: 100%;
+  width: 90%;
+  max-width: 400px;
   margin: 2rem auto 10rem;
 }
 .svg--design .blueprint {
@@ -1272,6 +1274,7 @@ Box Helpers
 
 .svg--deploy {
   width: 40%;
+  max-width: 200px;
   height: auto;
   margin: 2rem auto 12rem;
   -webkit-transform: rotate(42deg);
@@ -1279,10 +1282,10 @@ Box Helpers
 }
 
 .svg--dream {
-  width: 40%;
+  width: 90%;
+  max-width: 450px;
   height: auto;
-  margin: 7rem auto 4rem;
-  float: left;
+  margin: 0 auto;
 }
 
 .stars {
@@ -1292,46 +1295,36 @@ Box Helpers
   left: 0;
 }
 
-.star, .shooting-star {
+.star {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
   width: 5px;
   height: 5px;
   background: #ffffff;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  /* &:after {
-    display: block;
-    content: '';
-    position: absolute;
-    top: 1px;
-    right: 100%;
-
-    width: 3rem;
-    height: 1px;
-
-    background: color(blue);
-    background: linear-gradient(to right, rgba(#fff, 0), rgba(#fff, 1));
-  } */
 }
 
 .star:nth-child(1) {
-  top: 4rem;
-  right: 15%;
+  top: 7rem;
+  right: 18%;
 }
 
 .star:nth-child(2) {
-  top: 2rem;
-  right: 75%;
+  top: 1.4rem;
+  right: 69%;
 }
 
 .star:nth-child(3) {
-  top: 0rem;
+  top: 3rem;
   right: 10%;
 }
 
 .star:nth-child(4) {
-  top: 1rem;
+  top: 0rem;
   right: 45%;
+}
+
+.star:nth-child(5) {
+  top: 0rem;
+  right: 19%;
 }
