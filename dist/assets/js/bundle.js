@@ -9547,6 +9547,8 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
+	var _helpers = __webpack_require__(8);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var svg = {
@@ -9569,7 +9571,7 @@
 	    var _this = this;
 
 	    (0, _jquery2.default)(window).on('scroll', function () {
-	      if (document.querySelector(_this.design) && _this._isElementInViewport(document.querySelector(_this.design))) {
+	      if (document.querySelector(_this.design) && (0, _helpers.isInView)(document.querySelector(_this.design))) {
 	        _this._drawSVG(_this.design, 1, 0.07, 0);
 	      }
 	    }).bind(this);
@@ -9613,15 +9615,25 @@
 
 	      TweenMax.to(this.shootingStar, 1.3, { strokeDashoffset: -strokeLength * 3.5, opacity: 0.5, repeat: -1, ease: Power0.easeNone, repeatDelay: 5 });
 	    }
-	  },
-	  _isElementInViewport: function _isElementInViewport(el) {
-	    var rect = el.getBoundingClientRect();
-
-	    return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
 	  }
 	};
 
 	exports.default = svg;
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	function isInView(el) {
+	  var rect = el.getBoundingClientRect();
+	  console.log(el);
+
+	  return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+	}
+
+	module.exports = { isInView: isInView };
 
 /***/ }
 /******/ ]);

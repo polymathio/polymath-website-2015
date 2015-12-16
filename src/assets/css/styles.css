@@ -686,12 +686,13 @@ strong {
   position: relative;
   margin-bottom: 1.5rem;
   padding: 2rem;
+  border-radius: 2px;
 }
 .block--hero {
   height: 100%;
 }
 .block--dark {
-  background: rgba(28, 29, 39, 0.9);
+  background: #1c1d27;
 }
 .block--gray {
   background: #F2F3F4;
@@ -1422,3 +1423,29 @@ Box Helpers
   top: 0rem;
   right: 19%;
 }
+
+/* .material-wrapper {
+  perspective: 100;
+}
+
+.material-card {
+  transition: 0.15s ease-in-out;
+  transform-origin: center;
+
+  backface-visibility: hidden;
+  box-shadow: 4px 4px 16px rgba(color(black), 0), 0 3px 6px rgba(0,0,0,0);
+
+  &:hover {
+    transform: translateZ(1px);
+    box-shadow: 4px 6px 16px rgba(color(black), 0.19);
+  }
+
+  &.block--dark:hover {
+    transform: translateZ(1px);
+    box-shadow: 4px 4px 16px rgba(color(black), 0.5), 0 3px 6px rgba(0,0,0,0.4);
+  }
+
+  & > * {
+     
+  }
+} */

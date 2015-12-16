@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { isInView } from './helpers';
 
 let svg = {
   init() {
@@ -20,7 +21,7 @@ let svg = {
 
   bindEvents() {
     $(window).on('scroll', () => {
-      if (document.querySelector(this.design) && this._isElementInViewport(document.querySelector(this.design))) {
+      if (document.querySelector(this.design) && isInView(document.querySelector(this.design))) {
         this._drawSVG(this.design, 1, 0.07, 0);  
       }
     }).bind(this);
@@ -66,17 +67,6 @@ let svg = {
 
       TweenMax.to(this.shootingStar, 1.3, {strokeDashoffset: -strokeLength * 3.5, opacity: 0.5, repeat: -1, ease: Power0.easeNone, repeatDelay: 5});
     }
-  },
-
-  _isElementInViewport(el) {
-    let rect = el.getBoundingClientRect();
-
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
   }
 };
 

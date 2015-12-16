@@ -2,13 +2,14 @@
   position: relative;
   margin-bottom: $panel-gutters;
   padding: 2rem;
+  border-radius: 2px;
 
   &--hero {
     height: 100%;
   }
 
   &--dark {
-    background: rgba(color(black), 0.9);
+    background: rgba(color(black), 1);
   }
 
   &--gray {
