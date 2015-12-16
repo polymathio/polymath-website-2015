@@ -2,7 +2,7 @@
   display: inline-block;
   height: auto;
   width: 90%;
-  max-width: 400px;
+  max-height: 300px;
   margin: 2rem auto 10rem;
 
   .blueprint {
@@ -24,7 +24,7 @@
 
 .svg--deploy {
   width: 40%;
-  max-width: 200px;
+  max-height: 300px;
   height: auto;
   margin: 2rem auto 12rem;
 
@@ -33,9 +33,14 @@
 
 .svg--dream {
   width: 90%;
-  max-width: 450px;
+  max-height: 300px;
   height: auto;
-  margin: 0 auto;
+  margin: 2rem auto 0;
+
+  .telescope {
+    transform: scale(0.85);
+    transform-origin: 0 100%;
+  }
 }
 
 .stars {

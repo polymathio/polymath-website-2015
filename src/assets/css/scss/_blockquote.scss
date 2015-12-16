@@ -1,0 +1,92 @@
+$float-break: 860px;
+
+.blockquote {
+  position: relative;
+  display: inline-block;
+  width: 360px;
+  padding: 2rem;
+  margin: 0 1.5rem 1rem;
+
+  background: color(black);
+  color: color(white);
+
+  z-index: 10;
+
+  @media screen and (max-width: $float-break) {
+    width: 300px;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.4em;
+  }
+
+  cite {
+    font-size: 1rem;
+    font-style: normal;
+  }
+
+  a {
+    float: right;
+    color: color(white);
+    font-size: 0.75rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 300;
+    
+    opacity: 0.6;
+
+    &:hover, &:active, &:focus {
+      opacity: 1;
+    }
+  }
+
+
+  &--right {
+    float: right;
+    margin-right: -110px;
+
+    @media screen and (max-width: $float-break) {
+      margin-right: 0;
+    }
+  }
+
+  &--left {
+    float: left;
+    margin-left: -110px;
+    @media screen and (max-width: $float-break) {
+      margin-left: 0;
+    }
+  }
+  
+  &--green {
+    background: color(green);
+
+    a {
+      font-weight: 600;
+      opacity: 0.9;
+    }
+  }
+
+  &--dark-gray {
+    background: color(dark-gray);
+    color: rgba(color(white), 0.9);
+
+    a {
+      opacity: 0.7;
+    }
+  }
+
+  &--gray {
+    background: color(gray);
+    color: rgba(color(black), 0.75);
+
+    a {
+      color: color(black);
+      opacity: 0.7;
+    }
+  }
+}

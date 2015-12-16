@@ -589,8 +589,8 @@ h6 {
   font-size: 1rem;
 }
 
-p, input, textarea, a {
-  letter-spacing: 0.07em;
+p, input, textarea, a, cite {
+  letter-spacing: 0.05em;
 }
 
 a {
@@ -601,6 +601,85 @@ a {
 
 strong {
   font-weight: 400;
+}
+
+.blockquote {
+  position: relative;
+  display: inline-block;
+  width: 360px;
+  padding: 2rem;
+  margin: 0 1.5rem 1rem;
+  background: #1C1D27;
+  color: #ffffff;
+  z-index: 10;
+}
+@media screen and (max-width: 860px) {
+  .blockquote {
+    width: 300px;
+  }
+}
+.blockquote p {
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.4em;
+}
+.blockquote cite {
+  font-size: 1rem;
+  font-style: normal;
+}
+.blockquote a {
+  float: right;
+  color: #ffffff;
+  font-size: 0.75rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 300;
+  opacity: 0.6;
+}
+.blockquote a:hover, .blockquote a:active, .blockquote a:focus {
+  opacity: 1;
+}
+.blockquote--right {
+  float: right;
+  margin-right: -110px;
+}
+@media screen and (max-width: 860px) {
+  .blockquote--right {
+    margin-right: 0;
+  }
+}
+.blockquote--left {
+  float: left;
+  margin-left: -110px;
+}
+@media screen and (max-width: 860px) {
+  .blockquote--left {
+    margin-left: 0;
+  }
+}
+.blockquote--green {
+  background: #90C4B3;
+}
+.blockquote--green a {
+  font-weight: 600;
+  opacity: 0.9;
+}
+.blockquote--dark-gray {
+  background: #515762;
+  color: rgba(255, 255, 255, 0.9);
+}
+.blockquote--dark-gray a {
+  opacity: 0.7;
+}
+.blockquote--gray {
+  background: #F2F3F4;
+  color: rgba(28, 29, 39, 0.75);
+}
+.blockquote--gray a {
+  color: #1C1D27;
+  opacity: 0.7;
 }
 
 .block {
@@ -814,8 +893,17 @@ strong {
 }
 .container--small {
   width: 90%;
-  max-width: 680px;
+  max-width: 640px;
   margin: 0 auto;
+}
+.container--small:before, .container--small:after {
+  content: "";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.container--small:after {
+  clear: both;
 }
 
 .va--table {
@@ -1258,7 +1346,7 @@ Box Helpers
   display: inline-block;
   height: auto;
   width: 90%;
-  max-width: 400px;
+  max-height: 300px;
   margin: 2rem auto 10rem;
 }
 .svg--design .blueprint {
@@ -1274,7 +1362,7 @@ Box Helpers
 
 .svg--deploy {
   width: 40%;
-  max-width: 200px;
+  max-height: 300px;
   height: auto;
   margin: 2rem auto 12rem;
   -webkit-transform: rotate(42deg);
@@ -1283,9 +1371,15 @@ Box Helpers
 
 .svg--dream {
   width: 90%;
-  max-width: 450px;
+  max-height: 300px;
   height: auto;
-  margin: 0 auto;
+  margin: 2rem auto 0;
+}
+.svg--dream .telescope {
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
 }
 
 .stars {
