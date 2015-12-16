@@ -1,0 +1,16 @@
+.bio-tile {
+  position: relative;
+  display: block;
+  padding-bottom: 100%;
+  margin-bottom: $panel-gutters;
+  
+  //background: rgba(#000, 0.1);
+  overflow: hidden;
+
+  &__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
