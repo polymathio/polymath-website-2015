@@ -23,7 +23,7 @@ body {
   margin-bottom: 1rem;
   text-rendering: optimizeLegibility;
   color:  color(text);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   line-height: 1.1em;
   @include font($museo, 16, 300);
   &::selection{

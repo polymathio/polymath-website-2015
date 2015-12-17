@@ -590,7 +590,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
   text-rendering: optimizeLegibility;
   color: #1C1D27;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   line-height: 1.1em;
   font-family: "museo-sans", sans-serif;
   font-weight: 300;
@@ -1496,12 +1496,65 @@ Box Helpers
   display: block;
   padding-bottom: 100%;
   margin-bottom: 1.5rem;
+  border-radius: 2px;
   overflow: hidden;
 }
 .bio-tile__image {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: auto;
+  height: 100%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.bio-tile__info {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 2rem;
+  background: rgba(144, 196, 179, 0.95);
+  border-radius: 2px;
+  opacity: 0;
+  -webkit-transition: 0.15s ease-out;
+          transition: 0.15s ease-out;
+  -webkit-transform: translate(0, 1em);
+          transform: translate(0, 1em);
+  box-shadow: 4px 4px 16px rgba(28, 29, 39, 0.2), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+.bio-tile__name, .bio-tile__title {
+  color: #ffffff;
+  -webkit-transform: translate(0, 2rem);
+          transform: translate(0, 2rem);
+  opacity: 0;
+}
+.bio-tile__name {
+  letter-spacing: 0.05em;
+  font-size: 2.1rem;
+  -webkit-transition: 0.3s;
+          transition: 0.3s;
+}
+.bio-tile__title {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+  -webkit-transition: 0.37s;
+          transition: 0.37s;
+}
+.bio-tile:hover .bio-tile__info, .bio-tile:active .bio-tile__info, .bio-tile:focus .bio-tile__info {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+.bio-tile:hover .bio-tile__name, .bio-tile:hover .bio-tile__title, .bio-tile:active .bio-tile__name, .bio-tile:active .bio-tile__title, .bio-tile:focus .bio-tile__name, .bio-tile:focus .bio-tile__title {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
+}
+.bio-tile:hover .bio-tile__title, .bio-tile:active .bio-tile__title, .bio-tile:focus .bio-tile__title {
+  opacity: 0.85;
 }
