@@ -1,6 +1,5 @@
 function isInView(el) {
   let rect = el.getBoundingClientRect();
-  console.log(el);
 
   return (
     rect.top >= 0 &&

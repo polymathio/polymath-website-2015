@@ -9547,6 +9547,10 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
+	var _throttle = __webpack_require__(6);
+
+	var _throttle2 = _interopRequireDefault(_throttle);
+
 	var _helpers = __webpack_require__(8);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -9570,11 +9574,11 @@
 	  bindEvents: function bindEvents() {
 	    var _this = this;
 
-	    (0, _jquery2.default)(window).on('scroll', function () {
+	    (0, _jquery2.default)(window).on('scroll', _jquery2.default.throttle(250, function () {
 	      if (document.querySelector(_this.design) && (0, _helpers.isInView)(document.querySelector(_this.design))) {
-	        _this._drawSVG(_this.design, 1, 0.07, 0);
+	        _this._drawSVG(_this.design, 1.4, 0.09, 0);
 	      }
-	    }).bind(this);
+	    })).bind(this);
 	  },
 	  _setUpSVG: function _setUpSVG(svg) {
 	    this[svg] = {
@@ -9628,7 +9632,6 @@
 
 	function isInView(el) {
 	  var rect = el.getBoundingClientRect();
-	  console.log(el);
 
 	  return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
 	}

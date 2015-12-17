@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import Throttle from'./vendor/throttle';
 import { isInView } from './helpers';
 
 let svg = {
@@ -20,11 +21,11 @@ let svg = {
   },
 
   bindEvents() {
-    $(window).on('scroll', () => {
+    $(window).on('scroll', $.throttle(250, () => {
       if (document.querySelector(this.design) && isInView(document.querySelector(this.design))) {
-        this._drawSVG(this.design, 1, 0.07, 0);  
+        this._drawSVG(this.design, 1.4, 0.09, 0);  
       }
-    }).bind(this);
+    })).bind(this);
   },
 
   _setUpSVG(svg) {
