@@ -16,7 +16,8 @@
   </head>
   <body>
     
-    
+    <div class="wrapper">
+      
 
   <div class="block block--hero block--dark">
     <div class="va--table">
@@ -74,13 +75,26 @@
   </div>
 
   <footer class="footer grid">
-  <div class="col-6">
-    <div class="block block--dark padding--lr-4 js-block" data-group='footer'>
-      <div class="va--table">
-        <div class="va--table-cell">
-          <h4 class="t-uppercase t-white">Have a project in mind?</h4>
-          <a href="" class="button button--white">Start Here</a>    
-        </div>
+  <div class="col-6 contact-filler__parent">
+    <div class="block block--dark padding--lr-4 js-contact-clonee js-block" data-group='footer'>
+      <div class="contact-filler js-contact-clone">
+        <div class="va--table">
+          <div class="va--table-cell">
+            <h4 class="t-uppercase t-white">Have a project in mind?</h4>
+            <a href="" class="button button--white js-contact-trigger">Start Here</a>
+
+            <div class="contact__form js-contact-form">
+              <fieldset>
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Name">
+              </fieldset>
+              <fieldset>
+                <label for="company">Company</label>
+                <input type="text" id="company" placeholder="Company">
+              </fieldset>
+            </div>
+          </div>
+        </div>  
       </div>
     </div>
   </div>
@@ -101,9 +115,16 @@
     </div>
   </div>
 </footer>
+
+
+
+<!-- <div class="contact js-contact-wrapper"> -->
+  <!-- <div class="contact-filler js-contact-filler"></div>   -->
+<!-- </div> -->
  
   
-
+  
+    </div>
     
     <script src="https://use.typekit.net/wjs2cqp.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>

@@ -62,12 +62,17 @@
 
 	var _svg2 = _interopRequireDefault(_svg);
 
+	var _contact = __webpack_require__(9);
+
+	var _contact2 = _interopRequireDefault(_contact);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _jquery2.default)(document).ready(function () {
 	  //events.init();
 	  _inlineSizer2.default.init();
 	  _svg2.default.init();
+	  _contact2.default.init();
 	});
 
 /***/ },
@@ -9637,6 +9642,88 @@
 	}
 
 	module.exports = { isInView: isInView };
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _jquery = __webpack_require__(1);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var contact = {
+	  init: function init() {
+	    this._cacheDOM();
+	    this._bindEvents();
+	  },
+	  _cacheDOM: function _cacheDOM() {
+	    this.$trigger = (0, _jquery2.default)('.js-contact-trigger');
+
+	    this.$clonee = (0, _jquery2.default)('.js-contact-clonee');
+	    this.$clone = (0, _jquery2.default)('.js-contact-clone');
+	    this.$form = (0, _jquery2.default)('.js-contact-form');
+	  },
+	  _bindEvents: function _bindEvents() {
+	    var _this = this;
+
+	    this.$trigger.on('click', function (e) {
+	      e.preventDefault();
+	      _this.fill();
+	    });
+	  },
+	  fill: function fill() {
+	    var h = this.$clonee.outerHeight();
+	    var w = this.$clonee.outerWidth();
+	    var top = this.$clonee.offset().top;
+	    var left = this.$clonee.offset().left;
+
+	    this.$clone.addClass('is-expanded');
+
+	    TweenMax.set(this.$clone, {
+	      height: '100%',
+	      width: '100%',
+	      top: 0,
+	      left: 0,
+	      bottom: 0,
+	      right: 0,
+	      position: 'fixed'
+	    });
+
+	    TweenMax.from(this.$clone, 0.4, {
+	      height: h,
+	      width: w,
+	      top: top,
+	      left: left,
+	      ease: Power3.easeOut
+	    });
+
+	    TweenMax.set(this.$form, {
+	      height: 'auto',
+	      opacity: 1,
+	      y: 0
+	    });
+
+	    TweenMax.from(this.$form, 0.5, {
+	      height: 0,
+	      opacity: 0,
+	      y: '32px',
+	      ease: Power1.easeOut
+	    });
+	  },
+	  empty: function empty() {
+	    this.$filler.removeClass('is-filled');
+	  }
+	};
+
+	exports.default = contact;
 
 /***/ }
 /******/ ]);

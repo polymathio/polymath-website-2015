@@ -5,10 +5,10 @@ pre,table,fieldset,hr {
   margin-bottom: base(1);
 }
 
-
 html, body {
   position: relative;
   height: 100%;
+  overflow-x: hidden;
 }
 
 html {
@@ -21,4 +21,8 @@ body {
 
 textarea:focus, input:focus{
   outline: 0;
+}
+
+.wrapper {
+  height: 100%;
 }

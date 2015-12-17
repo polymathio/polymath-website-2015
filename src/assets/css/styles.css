@@ -415,6 +415,7 @@ pre, table, fieldset, hr {
 html, body {
   position: relative;
   height: 100%;
+  overflow-x: hidden;
 }
 
 html {
@@ -427,6 +428,10 @@ body {
 
 textarea:focus, input:focus {
   outline: 0;
+}
+
+.wrapper {
+  height: 100%;
 }
 
 .grid {
@@ -1594,4 +1599,53 @@ Box Helpers
   height: 1px;
   background: -webkit-radial-gradient(rgba(28, 29, 39, 0.3) 0%, rgba(28, 29, 39, 0) 75%);
   background: radial-gradient(rgba(28, 29, 39, 0.3) 0%, rgba(28, 29, 39, 0) 75%);
+}
+
+.contact {
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1.5rem solid #ffffff;
+}
+.contact-filler {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 0 4rem;
+  border-radius: 2px;
+  background: #1c1d27;
+}
+.contact-filler__parent {
+  position: relative;
+  z-index: 1000;
+}
+.contact__form {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+.contact__form fieldset {
+  border: none;
+  margin: 1.5rem 0;
+}
+.contact__form label {
+  display: block;
+  color: #ffffff;
+}
+.contact__form input {
+  background: rgba(81, 87, 98, 0);
+  border: none;
+  border-bottom: 1px solid #515762;
+  padding: 0.5em;
+  color: #ffffff;
+  -webkit-transition: 0.15s;
+          transition: 0.15s;
+}
+.contact__form input:focus {
+  background: #515762;
 }
