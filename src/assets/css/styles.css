@@ -1582,8 +1582,8 @@ Box Helpers
   top: 0;
   height: 200%;
   width: 1px;
-  background: -webkit-radial-gradient(rgba(28, 29, 39, 0.6) 0%, rgba(28, 29, 39, 0) 80%);
-  background: radial-gradient(rgba(28, 29, 39, 0.6) 0%, rgba(28, 29, 39, 0) 80%);
+  background: -webkit-radial-gradient(rgba(28, 29, 39, 0.3) 0%, rgba(28, 29, 39, 0) 80%);
+  background: radial-gradient(rgba(28, 29, 39, 0.3) 0%, rgba(28, 29, 39, 0) 80%);
 }
 .clients__tile {
   padding: 2rem 0;
@@ -1592,6 +1592,6 @@ Box Helpers
   margin: 0;
   border: none;
   height: 1px;
-  background: -webkit-radial-gradient(rgba(28, 29, 39, 0.6) 0%, rgba(28, 29, 39, 0) 75%);
-  background: radial-gradient(rgba(28, 29, 39, 0.6) 0%, rgba(28, 29, 39, 0) 75%);
+  background: -webkit-radial-gradient(rgba(28, 29, 39, 0.3) 0%, rgba(28, 29, 39, 0) 75%);
+  background: radial-gradient(rgba(28, 29, 39, 0.3) 0%, rgba(28, 29, 39, 0) 75%);
 }
