@@ -1,0 +1,33 @@
+.clients {
+  &__grid {
+    padding-left: 0;
+  }
+
+  &__col {
+    position: relative;
+    padding-left: 0!important;
+
+    &:nth-child(-n+3):after {
+      display: block;
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 200%;
+      width: 1px;
+      background: radial-gradient(rgba(color(black), 0.6) 0%, rgba(color(black), 0) 80%);
+    }
+  }
+  
+  &__tile {
+    padding: 2rem 0;
+  }
+
+  &__horizontal-break {
+    margin: 0;
+    border: none;
+    height: 1px;
+    background: radial-gradient(rgba(color(black), 0.6) 0%, rgba(color(black), 0) 75%);
+  }
+
+}

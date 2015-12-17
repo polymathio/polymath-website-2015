@@ -1466,6 +1466,14 @@ Box Helpers
   right: 19%;
 }
 
+.svg--client {
+  width: 100px;
+  height: 100px;
+}
+.svg--client path {
+  fill: rgba(28, 29, 39, 0.67);
+}
+
 /* .material-wrapper {
   perspective: 100;
 }
@@ -1557,4 +1565,33 @@ Box Helpers
 }
 .bio-tile:hover .bio-tile__title, .bio-tile:active .bio-tile__title, .bio-tile:focus .bio-tile__title {
   opacity: 0.85;
+}
+
+.clients__grid {
+  padding-left: 0;
+}
+.clients__col {
+  position: relative;
+  padding-left: 0 !important;
+}
+.clients__col:nth-child(-n+3):after {
+  display: block;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 200%;
+  width: 1px;
+  background: -webkit-radial-gradient(rgba(28, 29, 39, 0.6) 0%, rgba(28, 29, 39, 0) 80%);
+  background: radial-gradient(rgba(28, 29, 39, 0.6) 0%, rgba(28, 29, 39, 0) 80%);
+}
+.clients__tile {
+  padding: 2rem 0;
+}
+.clients__horizontal-break {
+  margin: 0;
+  border: none;
+  height: 1px;
+  background: -webkit-radial-gradient(rgba(28, 29, 39, 0.6) 0%, rgba(28, 29, 39, 0) 75%);
+  background: radial-gradient(rgba(28, 29, 39, 0.6) 0%, rgba(28, 29, 39, 0) 75%);
 }

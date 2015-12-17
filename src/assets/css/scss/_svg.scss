@@ -84,3 +84,11 @@
   right: 19%;
 }
 
+.svg--client {
+  width: 100px;
+  height: 100px;
+
+  path {
+    fill: rgba(color(black), 0.67);
+  }
+}
