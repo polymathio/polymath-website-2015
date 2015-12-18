@@ -9579,7 +9579,7 @@
 	  bindEvents: function bindEvents() {
 	    var _this = this;
 
-	    (0, _jquery2.default)(window).on('scroll', _jquery2.default.throttle(250, function () {
+	    (0, _jquery2.default)('.wrapper').on('scroll', _jquery2.default.throttle(250, function () {
 	      if (document.querySelector(_this.design) && (0, _helpers.isInView)(document.querySelector(_this.design))) {
 	        _this._drawSVG(_this.design, 1.4, 0.09, 0);
 	      }
@@ -9666,20 +9666,36 @@
 	  },
 	  _cacheDOM: function _cacheDOM() {
 	    this.$trigger = (0, _jquery2.default)('.js-contact-trigger');
+	    this.$closeTrigger = (0, _jquery2.default)('.js-contact-close-trigger');
 
 	    this.$clonee = (0, _jquery2.default)('.js-contact-clonee');
 	    this.$clone = (0, _jquery2.default)('.js-contact-clone');
 	    this.$form = (0, _jquery2.default)('.js-contact-form');
+
+	    this.$input = (0, _jquery2.default)('.js-input-focus');
 	  },
 	  _bindEvents: function _bindEvents() {
 	    var _this = this;
 
 	    this.$trigger.on('click', function (e) {
 	      e.preventDefault();
-	      _this.fill();
+	      _this.expand();
+	    });
+
+	    this.$closeTrigger.on('click', function (e) {
+	      e.preventDefault();
+	      _this.close();
+	    });
+
+	    this.$input.on('input', function () {
+	      if ((0, _jquery2.default)(this).val()) {
+	        (0, _jquery2.default)(this).addClass('focus');
+	      } else {
+	        (0, _jquery2.default)(this).removeClass('focus');
+	      }
 	    });
 	  },
-	  fill: function fill() {
+	  expand: function expand() {
 	    var h = this.$clonee.outerHeight();
 	    var w = this.$clonee.outerWidth();
 	    var top = this.$clonee.offset().top;
@@ -9687,13 +9703,13 @@
 
 	    this.$clone.addClass('is-expanded');
 
+	    //Clone
 	    TweenMax.set(this.$clone, {
 	      height: '100%',
 	      width: '100%',
 	      top: 0,
 	      left: 0,
-	      bottom: 0,
-	      right: 0,
+	      paddingLeft: '5.5rem',
 	      position: 'fixed'
 	    });
 
@@ -9702,24 +9718,54 @@
 	      width: w,
 	      top: top,
 	      left: left,
+	      paddingLeft: '4rem',
 	      ease: Power3.easeOut
 	    });
 
+	    // Form
 	    TweenMax.set(this.$form, {
 	      height: 'auto',
 	      opacity: 1,
-	      y: 0
+	      y: '-48px'
 	    });
 
 	    TweenMax.from(this.$form, 0.5, {
-	      height: 0,
+
 	      opacity: 0,
-	      y: '32px',
+	      y: '-16px',
 	      ease: Power1.easeOut
 	    });
 	  },
-	  empty: function empty() {
-	    this.$filler.removeClass('is-filled');
+	  close: function close() {
+	    var h = this.$clonee.outerHeight();
+	    var w = this.$clonee.outerWidth();
+	    var top = this.$clonee.offset().top;
+	    var left = this.$clonee.offset().left;
+
+	    this.$clone.removeClass('is-expanded');
+
+	    TweenMax.to(this.$form, 0.3, {
+	      height: 0,
+	      opacity: 0,
+	      ease: Power1.easeOut
+	    });
+
+	    TweenMax.to(this.$clone, 0.35, {
+	      height: h,
+	      width: w,
+	      top: top,
+	      left: left,
+	      paddingLeft: '4rem',
+	      ease: Power3.easeOut,
+	      overwrite: 'all'
+	    });
+
+	    TweenMax.set(this.$clone, {
+	      position: 'absolute',
+	      top: 0,
+	      left: 0,
+	      delay: 0.36
+	    });
 	  }
 	};
 

@@ -415,7 +415,6 @@ pre, table, fieldset, hr {
 html, body {
   position: relative;
   height: 100%;
-  overflow-x: hidden;
 }
 
 html {
@@ -432,6 +431,7 @@ textarea:focus, input:focus {
 
 .wrapper {
   height: 100%;
+  overflow-x: hidden;
 }
 
 .grid {
@@ -633,7 +633,7 @@ h6 {
   font-size: 1rem;
 }
 
-p, input, textarea, a, cite {
+p, input, textarea, a, cite, label {
   letter-spacing: 0.05em;
 }
 
@@ -1601,27 +1601,88 @@ Box Helpers
   background: radial-gradient(rgba(28, 29, 39, 0.3) 0%, rgba(28, 29, 39, 0) 75%);
 }
 
-.contact {
-  display: none;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 1.5rem solid #ffffff;
-}
 .contact-filler {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  padding: 0 4rem;
+  padding: 4rem 4rem;
   border-radius: 2px;
   background: #1c1d27;
+}
+.contact-filler.is-expanded {
+  overflow: auto;
+}
+.contact-filler.is-expanded .va--table, .contact-filler.is-expanded .va--table-cell {
+  display: block;
 }
 .contact-filler__parent {
   position: relative;
   z-index: 1000;
+}
+.contact__open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.is-expanded .contact__open {
+  opacity: 0;
+  pointer-events: none;
+}
+.contact__close {
+  position: fixed;
+  top: 4rem;
+  right: 4rem;
+  height: 5rem;
+  width: 5rem;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translate(0, 1rem);
+          transform: translate(0, 1rem);
+  -webkit-transition: background 0.15s, -webkit-transform 0.2s, opacity 0.1s;
+          transition: background 0.15s, transform 0.2s, opacity 0.1s;
+  background: rgba(81, 87, 98, 0);
+  border-radius: 2px;
+  z-index: 1000;
+}
+.contact__close:hover {
+  background: rgba(81, 87, 98, 0.5);
+}
+.is-expanded .contact__close {
+  opacity: 1;
+  -webkit-transform: translate(0, 0rem);
+          transform: translate(0, 0rem);
+  pointer-events: auto;
+  -webkit-transition: background 0.15s, -webkit-transform 0.3s 0.6s, opacity 0.3s 0.6s;
+          transition: background 0.15s, transform 0.3s 0.6s, opacity 0.3s 0.6s;
+}
+.contact__close:before, .contact__close:after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 2px;
+  height: 80%;
+  border-radius: 2px;
+  background: #ffffff;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+.contact__close:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.contact__close:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.contact__left, .contact__right {
+  position: relative;
+  display: inline-block;
+  width: 33%;
+  vertical-align: top;
+  margin-right: 2rem;
 }
 .contact__form {
   position: relative;
@@ -1630,22 +1691,77 @@ Box Helpers
   opacity: 0;
 }
 .contact__form fieldset {
+  position: relative;
   border: none;
   margin: 1.5rem 0;
+  padding: 0;
+  width: 100%;
+  max-width: 560px;
 }
 .contact__form label {
   display: block;
-  color: #ffffff;
-}
-.contact__form input {
-  background: rgba(81, 87, 98, 0);
-  border: none;
-  border-bottom: 1px solid #515762;
-  padding: 0.5em;
-  color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  color: #90C4B3;
+  line-height: 1.6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0;
   -webkit-transition: 0.15s;
           transition: 0.15s;
 }
-.contact__form input:focus {
-  background: #515762;
+.contact__form textarea {
+  height: 15.5rem;
+}
+.contact__form input, .contact__form textarea {
+  display: block;
+  width: 100%;
+  background: rgba(81, 87, 98, 0.1);
+  border: none;
+  border-radius: 2px;
+  padding: 1rem;
+  color: #ffffff;
+  -webkit-transition: 0.15s;
+          transition: 0.15s;
+  font-size: 1.25rem;
+}
+.contact__form input::-webkit-input-placeholder, .contact__form textarea::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.33);
+}
+.contact__form input:-moz-placeholder, .contact__form textarea:-moz-placeholder {
+  color: rgba(255, 255, 255, 0.33);
+}
+.contact__form input::-moz-placeholder, .contact__form textarea::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.33);
+}
+.contact__form input:focus, .contact__form textarea:focus {
+  padding-top: 2.1rem;
+  background: rgba(81, 87, 98, 0.2);
+}
+.contact__form input:focus ~ label, .contact__form textarea:focus ~ label {
+  -webkit-transform: translate(0, -0.6rem);
+          transform: translate(0, -0.6rem);
+  opacity: 1;
+}
+.contact__form input.focus, .contact__form textarea.focus {
+  padding-top: 2.1rem;
+}
+.contact__form input.focus ~ label, .contact__form textarea.focus ~ label {
+  -webkit-transform: translate(0, -0.6rem);
+          transform: translate(0, -0.6rem);
+  opacity: 1;
+}
+.contact__form input[type="submit"] {
+  display: inline-block;
+  width: auto;
+  text-align: right;
+  float: right;
+  border: 4px solid #90C4B3;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #90C4B3;
 }

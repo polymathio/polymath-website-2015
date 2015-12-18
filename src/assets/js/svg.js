@@ -21,7 +21,7 @@ let svg = {
   },
 
   bindEvents() {
-    $(window).on('scroll', $.throttle(250, () => {
+    $('.wrapper').on('scroll', $.throttle(250, () => {
       if (document.querySelector(this.design) && isInView(document.querySelector(this.design))) {
         this._drawSVG(this.design, 1.4, 0.09, 0);  
       }

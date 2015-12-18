@@ -167,23 +167,41 @@
 
   <footer class="footer grid">
   <div class="col-6 contact-filler__parent">
-    <div class="block block--dark padding--lr-4 js-contact-clonee js-block" data-group='footer'>
+    <div class="block block--dark padding--lr-4 js-block js-contact-clonee " data-group='footer'>
       <div class="contact-filler js-contact-clone">
         <div class="va--table">
           <div class="va--table-cell">
             <h4 class="t-uppercase t-white">Have a project in mind?</h4>
-            <a href="" class="button button--white js-contact-trigger">Start Here</a>
+            <a href="" class="button button--white contact__open js-contact-trigger">Start Here</a>
+            <a href="" class="contact__close js-contact-close-trigger"></a>
 
-            <div class="contact__form js-contact-form">
+            <form class="contact__form js-contact-form">
+              
               <fieldset>
+                <input class="js-input-focus" type="text" placeholder="Name" id="name">
                 <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Name">
               </fieldset>
               <fieldset>
+                <input class="js-input-focus" type="text" placeholder="Company" id="company">
                 <label for="company">Company</label>
-                <input type="text" id="company" placeholder="Company">
               </fieldset>
-            </div>
+              <fieldset>
+                <input class="js-input-focus" type="text" placeholder="Phone Number" id="phone">
+                <label for="phone">Phone Number</label>
+              </fieldset>
+              <fieldset>
+                <input class="js-input-focus" type="text" placeholder="Email" id="email">
+                <label for="email">Email</label>
+              </fieldset>            
+              <fieldset>
+                <textarea class="js-input-focus" placeholder="Message" id="message" ></textarea>
+                <label for="message">Message</label>
+              </fieldset>
+              <fieldset>
+                <input type="submit" value="Send It">
+              </fieldset>
+              
+            </form>
           </div>
         </div>  
       </div>
@@ -207,11 +225,6 @@
   </div>
 </footer>
 
-
-
-<!-- <div class="contact js-contact-wrapper"> -->
-  <!-- <div class="contact-filler js-contact-filler"></div>   -->
-<!-- </div> -->
  
   
   

@@ -8,7 +8,6 @@ pre,table,fieldset,hr {
 html, body {
   position: relative;
   height: 100%;
-  overflow-x: hidden;
 }
 
 html {
@@ -25,4 +24,5 @@ textarea:focus, input:focus{
 
 .wrapper {
   height: 100%;
+    overflow-x: hidden;
 }
