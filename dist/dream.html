@@ -84,22 +84,22 @@
             <a href="" class="button button--white contact__open js-contact-trigger">Start Here</a>
             <a href="" class="contact__close js-contact-close-trigger"></a>
 
-            <form class="contact__form js-contact-form">
+            <form class="contact__form js-contact-form js-parsley">
               
               <fieldset>
-                <input class="js-input-focus" type="text" placeholder="Name" id="name">
+                <input class="js-input-focus" type="text" placeholder="Name" id="name" required data-parsley-trigger="focusout" data-parsley-required-message="Don't forget your name.">
                 <label for="name">Name</label>
               </fieldset>
               <fieldset>
-                <input class="js-input-focus" type="text" placeholder="Company" id="company">
+                <input class="js-input-focus" type="text" placeholder="Company" id="company" >
                 <label for="company">Company</label>
               </fieldset>
               <fieldset>
-                <input class="js-input-focus" type="text" placeholder="Phone Number" id="phone">
+                <input class="js-input-focus" type="text" placeholder="Phone Number" id="phone" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$" data-parsley-pattern-message="This must be a valid phone number." required data-parsley-trigger="focusout" data-parsley-required-message="Don't forget your phone number.">
                 <label for="phone">Phone Number</label>
               </fieldset>
               <fieldset>
-                <input class="js-input-focus" type="text" placeholder="Email" id="email">
+                <input class="js-input-focus" type="email" placeholder="Email" id="email" required data-parsley-trigger="focusout" data-parsley-required-message="Don't forget your email addresss." data-parsley-type-message="This must be a valid email address.">
                 <label for="email">Email</label>
               </fieldset>            
               <fieldset>

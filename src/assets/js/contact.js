@@ -87,13 +87,13 @@ let contact = {
 
     this.$clone.removeClass('is-expanded');
 
-    TweenMax.to(this.$form, 0.3, {
+    TweenMax.to(this.$form, 0.2, {
       height: 0,
       opacity: 0,
       ease: Power1.easeOut
     });
 
-    TweenMax.to(this.$clone, 0.35, {
+    TweenMax.to(this.$clone, 0.4, {
       height: h,
       width: w,
       top: top,
@@ -107,7 +107,7 @@ let contact = {
       position: 'absolute',
       top: 0,
       left: 0,
-      delay: 0.36
+      delay: 0.4
     });
   }
 }

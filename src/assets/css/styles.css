@@ -421,16 +421,13 @@ html {
   background-color: #ffffff;
 }
 
-body {
-  padding: 1.5rem;
-}
-
 textarea:focus, input:focus {
   outline: 0;
 }
 
 .wrapper {
   height: 100%;
+  padding: 1.5rem;
   overflow-x: hidden;
 }
 
@@ -1756,6 +1753,9 @@ Box Helpers
           transform: translate(0, -0.6rem);
   opacity: 1;
 }
+.contact__form input.parsley-error, .contact__form textarea.parsley-error {
+  background: rgba(98, 81, 81, 0.21);
+}
 .contact__form input[type="submit"] {
   display: inline-block;
   width: auto;
@@ -1766,4 +1766,30 @@ Box Helpers
   text-transform: uppercase;
   font-weight: 600;
   color: #90C4B3;
+}
+.contact__form input[type="submit"]:hover, .contact__form input[type="submit"]:active, .contact__form input[type="submit"]:focus {
+  padding-top: 1rem;
+  background: #90C4B3;
+  color: #ffffff;
+}
+.contact__form .parsley-errors-list {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  padding: 1rem;
+  pointer-events: none;
+  list-style-type: none;
+  color: #625151;
+  font-size: 0.85em;
+  font-weight: 600;
+  -webkit-transform: translate(0.5rem, -50%);
+          transform: translate(0.5rem, -50%);
+  opacity: 0;
+  -webkit-transition: 0.15s;
+          transition: 0.15s;
+}
+.contact__form .parsley-errors-list.filled {
+  opacity: 1;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }

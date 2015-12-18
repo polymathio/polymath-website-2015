@@ -167,6 +167,10 @@
           opacity: 1;
         }
       }
+
+      &.parsley-error {
+        background: rgba(#625151, 0.21)
+      }
     }
 
     input[type="submit"] {
@@ -182,6 +186,34 @@
       text-transform: uppercase;
       font-weight: 600;
       color: color(green);
+
+      &:hover, &:active, &:focus {
+        padding-top: 1rem;
+        background: color(green);
+        color: color(white);
+      }
+    }
+
+    .parsley-errors-list {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      padding: 1rem;
+      pointer-events: none;
+      list-style-type: none;
+
+      color: rgba(#625151, 1);
+      font-size: 0.85em;
+      font-weight: 600;
+
+      transform: translate(0.5rem, -50%);
+      opacity: 0;
+      transition: 0.15s;
+    
+      &.filled {
+        opacity: 1;
+        transform: translate(0, -50%);
+      }
     }
   }
 }

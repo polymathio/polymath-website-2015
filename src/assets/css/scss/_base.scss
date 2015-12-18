@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  padding: $panel-gutters;
+  //padding: $panel-gutters;
 }
 
 textarea:focus, input:focus{
@@ -24,5 +24,6 @@ textarea:focus, input:focus{
 
 .wrapper {
   height: 100%;
-    overflow-x: hidden;
+  padding: $panel-gutters;
+  overflow-x: hidden;
 }
