@@ -107,7 +107,7 @@ let contact = {
       position: 'absolute',
       top: 0,
       left: 0,
-      delay: 0.4
+      delay: 0.41
     });
   }
 }
