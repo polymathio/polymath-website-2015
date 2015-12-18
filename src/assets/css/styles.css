@@ -1737,11 +1737,13 @@ Box Helpers
 .contact__form input::-moz-placeholder, .contact__form textarea::-moz-placeholder {
   color: rgba(255, 255, 255, 0.33);
 }
-.contact__form input:focus, .contact__form textarea:focus {
-  padding-top: 2.1rem;
+.contact__form input:focus, .contact__form input:hover, .contact__form input:active, .contact__form textarea:focus, .contact__form textarea:hover, .contact__form textarea:active {
   background: rgba(81, 87, 98, 0.2);
 }
-.contact__form input:focus ~ label, .contact__form textarea:focus ~ label {
+.contact__form input:focus, .contact__form input:active, .contact__form textarea:focus, .contact__form textarea:active {
+  padding-top: 2.1rem;
+}
+.contact__form input:focus ~ label, .contact__form input:active ~ label, .contact__form textarea:focus ~ label, .contact__form textarea:active ~ label {
   -webkit-transform: translate(0, -0.6rem);
           transform: translate(0, -0.6rem);
   opacity: 1;

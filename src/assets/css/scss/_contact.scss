@@ -145,10 +145,13 @@
       &::-webkit-input-placeholder { color: rgba(color(white), 0.33); }
       &:-moz-placeholder { color: rgba(color(white), 0.33); }
       &::-moz-placeholder { color: rgba(color(white), 0.33); }
-
-      &:focus {
-        padding-top: 2.1rem;
+      
+      &:focus, &:hover, &:active {
         background: rgba(color(dark-gray), 0.2);
+      }
+
+      &:focus, &:active {
+        padding-top: 2.1rem;
 
         & ~ label {
           transform: translate(0, -0.6rem);
