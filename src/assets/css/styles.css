@@ -1628,10 +1628,10 @@ Box Helpers
 }
 .contact__close {
   position: fixed;
-  top: 4rem;
-  right: 4rem;
-  height: 5rem;
-  width: 5rem;
+  top: 1.5rem;
+  right: 1.5rem;
+  height: 4.7rem;
+  width: 4.9rem;
   opacity: 0;
   pointer-events: none;
   -webkit-transform: translate(0, 1rem);
@@ -1686,6 +1686,7 @@ Box Helpers
   height: 0;
   overflow: hidden;
   opacity: 0;
+  pointer-events: none;
 }
 .contact__form fieldset {
   position: relative;
@@ -1792,4 +1793,210 @@ Box Helpers
   opacity: 1;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 1.5rem 0;
+  z-index: 100;
+}
+.nav.is-open {
+  z-index: 10000;
+}
+.nav__logo {
+  position: absolute;
+  display: block;
+  padding: 1rem 1.2rem 1.2rem;
+  z-index: 100;
+  border-radius: 1px;
+  background: #1C1D27;
+}
+.is-open .nav__logo {
+  background: #90C4B3;
+}
+.is-open .nav__logo:hover {
+  background: rgba(28, 29, 39, 0.1);
+}
+.nav__logo:before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 1px;
+  opacity: 0;
+  -webkit-transition: 0.15s;
+          transition: 0.15s;
+}
+.nav__logo:hover {
+  background: #90c4b3;
+}
+.nav__logo:hover:before {
+  opacity: 1;
+}
+.nav__logo:hover .polymath-logo {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.nav__menu-button {
+  position: absolute;
+  right: 1.5rem;
+  padding: 1rem 1.2rem 1.2rem;
+  display: block;
+  z-index: 100;
+  border-radius: 1px;
+  background: #1C1D27;
+}
+.nav__menu-button:hover {
+  background: #90C4B3;
+}
+.nav__menu-button:hover .nav__burger:after {
+  -webkit-transform: scaleX(1.25);
+          transform: scaleX(1.25);
+}
+.is-open .nav__menu-button {
+  background: #90C4B3;
+}
+.is-open .nav__menu-button:hover .nav__burger:after {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+.nav__burger {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  -webkit-transition: 0.2s ease-out;
+          transition: 0.2s ease-out;
+}
+.is-open .nav__burger {
+  opacity: 0;
+}
+.is-open .nav__burger:before, .is-open .nav__burger:after {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+.nav__burger:before, .nav__burger:after {
+  display: block;
+  content: '';
+  position: absolute;
+  height: 2px;
+  border-radius: 2px;
+  background: #ffffff;
+  -webkit-transition: 0.3s;
+          transition: 0.3s;
+}
+.nav__burger:before {
+  top: 50%;
+  margin-top: -1px;
+  width: 100%;
+}
+.nav__burger:after {
+  top: 25%;
+  left: 10%;
+  margin-top: -1px;
+  width: 80%;
+  box-shadow: 0 1.3rem 0 #ffffff;
+}
+.nav__close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4.9rem;
+  height: 4.7rem;
+  border-radius: 1px;
+  opacity: 0;
+  -webkit-transition: 0.3s;
+          transition: 0.3s;
+  -webkit-transform: translate(0, -16px);
+          transform: translate(0, -16px);
+}
+.is-open .nav__close {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+.nav__close:hover {
+  background: rgba(28, 29, 39, 0.1);
+}
+.nav__close:before, .nav__close:after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 2px;
+  height: 80%;
+  border-radius: 2px;
+  background: #ffffff;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transition: 0.2s ease-out;
+          transition: 0.2s ease-out;
+}
+.nav__close:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.nav__close:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.nav__menu {
+  position: fixed;
+  right: 1.5rem;
+  top: 1.5rem;
+  width: 4.9rem;
+  height: 4.7rem;
+  background: #90C4B3;
+  pointer-events: none;
+  overflow: auto;
+}
+.nav__list {
+  position: absolute;
+  top: 4.7rem;
+  left: 1.5rem;
+  width: 100%;
+  margin: 0;
+  padding: 0rem 0 4rem;
+  list-style-type: none;
+  text-align: center;
+}
+.nav__item {
+  opacity: 0;
+}
+.nav__link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 1.4rem 2rem;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 4rem;
+  line-height: 4.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+}
+.nav__link:hover {
+  background: rgba(28, 29, 39, 0.5);
+}
+
+.polymath-logo {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  -webkit-transition: 0.15s ease-out;
+          transition: 0.15s ease-out;
+}
+.polymath-logo path {
+  fill: transparent;
+  stroke: #ffffff;
+  stroke-width: 2px;
+  -webkit-transition: 0.15s;
+          transition: 0.15s;
 }

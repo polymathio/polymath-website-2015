@@ -35,10 +35,10 @@
 
   &__close {
     position: fixed;
-    top: 4rem;
-    right: 4rem;
-    height: 5rem;
-    width: 5rem;
+    top: 1.5rem;
+    right: 1.5rem;
+    height: 4.7rem;
+    width: 4.9rem;
 
     opacity: 0;
     pointer-events: none;
@@ -96,6 +96,7 @@
     height: 0;
     overflow: hidden;
     opacity: 0;
+    pointer-events: none;
 
     fieldset {
       position: relative;
@@ -135,7 +136,6 @@
       background: rgba(color(dark-gray), 0.1);
       border: none;
       border-radius: 2px;
-      //border-bottom: 1px solid rgba(color(dark-gray), 0);
       padding: 1rem;
       color: color(white);
       transition: 0.15s;

@@ -70,6 +70,10 @@
 
 	var _validation2 = _interopRequireDefault(_validation);
 
+	var _nav = __webpack_require__(12);
+
+	var _nav2 = _interopRequireDefault(_nav);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _jquery2.default)(document).ready(function () {
@@ -78,6 +82,7 @@
 	  _svg2.default.init();
 	  _contact2.default.init();
 	  _validation2.default.init();
+	  _nav2.default.init();
 	});
 
 /***/ },
@@ -9735,11 +9740,12 @@
 	    });
 
 	    TweenMax.from(this.$form, 0.5, {
-
 	      opacity: 0,
 	      y: '-16px',
 	      ease: Power1.easeOut
 	    });
+
+	    TweenMax.set(this.$form, { 'pointer-events': 'auto', delay: 2 });
 	  },
 	  close: function close() {
 	    var h = this.$clonee.outerHeight();
@@ -9754,6 +9760,7 @@
 	      opacity: 0,
 	      ease: Power1.easeOut
 	    });
+	    TweenMax.set(this.$form, { 'pointer-events': 'none' });
 
 	    TweenMax.to(this.$clone, 0.4, {
 	      height: h,
@@ -11942,6 +11949,100 @@
 	  return parsley;
 	});
 	//# sourceMappingURL=parsley.js.map
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _jquery = __webpack_require__(1);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var nav = {
+	  init: function init() {
+	    this._cacheDOM();
+	    this._bindEvents();
+	  },
+	  _cacheDOM: function _cacheDOM() {
+	    this.$trigger = (0, _jquery2.default)('.js-menu-trigger');
+	    this.$menu = (0, _jquery2.default)('.js-nav-menu');
+	    this.$logo = (0, _jquery2.default)('.js-nav-logo');
+	    this.$link = (0, _jquery2.default)('.js-nav-link');
+	    this.$nav = (0, _jquery2.default)('.js-nav');
+	  },
+	  _bindEvents: function _bindEvents() {
+	    var _this = this;
+
+	    this.$trigger.on('click', function (e) {
+	      e.preventDefault();
+	      _this.toggleMenu();
+	    });
+	  },
+	  toggleMenu: function toggleMenu() {
+	    if (!this.$nav.hasClass('is-open')) {
+	      this.expand();
+	    } else {
+	      this.close();
+	    }
+	  },
+	  expand: function expand() {
+	    console.log('expand');
+
+	    this.$nav.addClass('is-open');
+
+	    TweenMax.to(this.$menu, 0.4, {
+	      height: '100%',
+	      width: '100%',
+	      top: 0,
+	      right: 0,
+	      'pointer-events': 'auto',
+	      ease: Power2.easeOut
+	    });
+
+	    TweenMax.set(this.$link, {
+	      y: -16,
+	      opacity: 0
+	    });
+
+	    TweenMax.staggerTo(this.$link, 0.4, {
+	      y: 0,
+	      opacity: 1,
+	      delay: 0.3,
+	      ease: Power2.easeOut
+	    }, 0.03);
+	  },
+	  close: function close() {
+	    var _this2 = this;
+
+	    TweenMax.to(this.$menu, 0.3, {
+	      height: '4.7rem',
+	      width: '4.9rem',
+	      top: '1.5rem',
+	      right: '1.5rem',
+	      'pointer-events': 'none',
+	      ease: Power1.easeOut
+	    });
+
+	    TweenMax.to(this.$link, 0.1, {
+	      opacity: 0,
+	      ease: Power2.easeOut
+	    });
+
+	    window.setTimeout(function () {
+	      _this2.$nav.removeClass('is-open');
+	    }, 100);
+	  }
+	};
+
+	exports.default = nav;
 
 /***/ }
 /******/ ]);

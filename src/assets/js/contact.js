@@ -72,11 +72,12 @@ let contact = {
     });
 
     TweenMax.from(this.$form, 0.5, {
-      
       opacity: 0,
       y: '-16px',
       ease: Power1.easeOut
     });
+
+    TweenMax.set(this.$form, { 'pointer-events': 'auto', delay: 2 });
   },
 
   close() {
@@ -92,6 +93,7 @@ let contact = {
       opacity: 0,
       ease: Power1.easeOut
     });
+    TweenMax.set(this.$form, { 'pointer-events': 'none' });
 
     TweenMax.to(this.$clone, 0.4, {
       height: h,

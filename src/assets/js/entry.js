@@ -5,6 +5,7 @@ import inlineSizer from'./inlineSizer';
 import svg from'./svg';
 import contact from'./contact';
 import validation from'./validation';
+import nav from'./nav';
 
 $(document).ready( () => {
   //events.init();
@@ -12,4 +13,5 @@ $(document).ready( () => {
   svg.init();
   contact.init();
   validation.init();
+  nav.init();
 });
