@@ -34,7 +34,7 @@ let nav = {
     
     this.$nav.addClass('is-open');
 
-    TweenMax.to(this.$menu, 0.4, {
+    TweenMax.to(this.$menu, 0.5, {
       height: '100%',
       width: '100%',
       top: 0,
@@ -51,29 +51,29 @@ let nav = {
     TweenMax.staggerTo(this.$link, 0.4, {
       y: 0,
       opacity: 1,
-      delay: 0.3,
+      delay: 0.4,
       ease: Power2.easeOut
     }, 0.03);
   },
 
   close() {
-    TweenMax.to(this.$menu, 0.3, {
+    TweenMax.to(this.$menu, 0.4, {
       height: '4.7rem',
       width: '4.9rem',
       top: '1.5rem',
       right: '1.5rem',
       'pointer-events': 'none',
-      ease: Power1.easeOut
+      ease: Power2.easeOut
     });
 
-    TweenMax.to(this.$link, 0.1, {
+    TweenMax.set(this.$link, {
       opacity: 0,
-      ease: Power2.easeOut
+      y: -16
     });
 
     window.setTimeout( () => {
       this.$nav.removeClass('is-open');
-    }, 100);
+    }, 300);
   }
 }
 

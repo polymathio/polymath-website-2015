@@ -26,4 +26,8 @@ textarea:focus, input:focus{
   height: 100%;
   padding: $panel-gutters;
   overflow-x: hidden;
+
+  @media screen and (max-width: break(s)) {
+    padding: 0;
+  }
 }

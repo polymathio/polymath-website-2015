@@ -430,10 +430,20 @@ textarea:focus, input:focus {
   padding: 1.5rem;
   overflow-x: hidden;
 }
+@media screen and (max-width: 640px) {
+  .wrapper {
+    padding: 0;
+  }
+}
 
 .grid {
   margin-left: -1.5rem;
   text-align: left;
+}
+@media screen and (max-width: 640px) {
+  .grid {
+    margin-left: 0;
+  }
 }
 .grid .col-1, .grid .col-2, .grid .col-3, .grid .col-4, .grid .col-5, .grid .col-6, .grid .col-7, .grid .col-8, .grid .col-9, .grid .col-10, .grid .col-11, .grid .col-12 {
   box-sizing: border-box;
@@ -442,6 +452,11 @@ textarea:focus, input:focus {
   padding-left: 1.5rem;
   min-height: 1px;
   vertical-align: top;
+}
+@media screen and (max-width: 640px) {
+  .grid .col-1, .grid .col-2, .grid .col-3, .grid .col-4, .grid .col-5, .grid .col-6, .grid .col-7, .grid .col-8, .grid .col-9, .grid .col-10, .grid .col-11, .grid .col-12 {
+    padding-left: 0;
+  }
 }
 .grid .col-1 {
   width: 8.33333%;
@@ -729,8 +744,19 @@ strong {
   padding: 2rem;
   border-radius: 2px;
 }
+@media screen and (max-width: 640px) {
+  .block {
+    margin-bottom: 0;
+    padding: 1rem;
+    border-radius: 0;
+  }
+}
 .block--hero {
   height: 100%;
+}
+.block--home {
+  background: url(../images/placeholder-hero.jpg) center no-repeat;
+  background-size: cover;
 }
 .block--dark {
   background: #1c1d27;
@@ -1022,6 +1048,11 @@ Box Helpers
   padding-left: 0rem;
   padding-right: 0rem;
 }
+@media screen and (max-width: 640px) {
+  .padding--lr-0 {
+    padding: 1.5rem;
+  }
+}
 
 .margin--t-1 {
   margin-top: 1rem;
@@ -1073,6 +1104,11 @@ Box Helpers
 .padding--lr-1 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+@media screen and (max-width: 640px) {
+  .padding--lr-1 {
+    padding: 1.5rem;
+  }
 }
 
 .margin--t-2 {
@@ -1126,6 +1162,11 @@ Box Helpers
   padding-left: 2rem;
   padding-right: 2rem;
 }
+@media screen and (max-width: 640px) {
+  .padding--lr-2 {
+    padding: 1.5rem;
+  }
+}
 
 .margin--t-3 {
   margin-top: 3rem;
@@ -1177,6 +1218,11 @@ Box Helpers
 .padding--lr-3 {
   padding-left: 3rem;
   padding-right: 3rem;
+}
+@media screen and (max-width: 640px) {
+  .padding--lr-3 {
+    padding: 1.5rem;
+  }
 }
 
 .margin--t-4 {
@@ -1230,6 +1276,11 @@ Box Helpers
   padding-left: 4rem;
   padding-right: 4rem;
 }
+@media screen and (max-width: 640px) {
+  .padding--lr-4 {
+    padding: 1.5rem;
+  }
+}
 
 .margin--t-5 {
   margin-top: 5rem;
@@ -1281,6 +1332,11 @@ Box Helpers
 .padding--lr-5 {
   padding-left: 5rem;
   padding-right: 5rem;
+}
+@media screen and (max-width: 640px) {
+  .padding--lr-5 {
+    padding: 1.5rem;
+  }
 }
 
 .margin--t-6 {
@@ -1334,6 +1390,11 @@ Box Helpers
   padding-left: 6rem;
   padding-right: 6rem;
 }
+@media screen and (max-width: 640px) {
+  .padding--lr-6 {
+    padding: 1.5rem;
+  }
+}
 
 .margin--t-7 {
   margin-top: 7rem;
@@ -1385,6 +1446,11 @@ Box Helpers
 .padding--lr-7 {
   padding-left: 7rem;
   padding-right: 7rem;
+}
+@media screen and (max-width: 640px) {
+  .padding--lr-7 {
+    padding: 1.5rem;
+  }
 }
 
 .svg--design {

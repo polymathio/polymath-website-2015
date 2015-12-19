@@ -4,8 +4,19 @@
   padding: 2rem;
   border-radius: 2px;
 
+  @media screen and (max-width: break(s)) {
+    margin-bottom: 0;
+    padding: 1rem;
+    border-radius: 0;
+  }
+
   &--hero {
     height: 100%;
+  }
+
+  &--home {
+    background: url(../images/placeholder-hero.jpg) center no-repeat;
+    background-size: cover;
   }
 
   &--dark {
