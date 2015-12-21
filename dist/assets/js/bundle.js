@@ -11978,7 +11978,7 @@
 	  _cacheDOM: function _cacheDOM() {
 	    this.$trigger = (0, _jquery2.default)('.js-menu-trigger');
 	    this.$menu = (0, _jquery2.default)('.js-nav-menu');
-	    this.$logo = (0, _jquery2.default)('.js-nav-logo');
+	    this.$list = (0, _jquery2.default)('.js-nav-list');
 	    this.$link = (0, _jquery2.default)('.js-nav-link');
 	    this.$nav = (0, _jquery2.default)('.js-nav');
 	  },
@@ -12019,9 +12019,11 @@
 	    TweenMax.staggerTo(this.$link, 0.4, {
 	      y: 0,
 	      opacity: 1,
-	      delay: 0.4,
+	      delay: 0.15,
 	      ease: Power2.easeOut
 	    }, 0.03);
+
+	    TweenMax.set(this.$list, { position: 'absolute', delay: 1 });
 	  },
 	  close: function close() {
 	    var _this2 = this;
@@ -12039,6 +12041,8 @@
 	      opacity: 0,
 	      y: -16
 	    });
+
+	    TweenMax.set(this.$list, { position: 'fixed', delay: 0.4 });
 
 	    window.setTimeout(function () {
 	      _this2.$nav.removeClass('is-open');

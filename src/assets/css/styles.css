@@ -2023,7 +2023,7 @@ Box Helpers
   overflow: auto;
 }
 .nav__list {
-  position: absolute;
+  position: fixed;
   top: 4.7rem;
   left: 1.5rem;
   width: 100%;

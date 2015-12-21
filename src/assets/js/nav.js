@@ -9,7 +9,7 @@ let nav = {
   _cacheDOM() {
     this.$trigger = $('.js-menu-trigger');
     this.$menu = $('.js-nav-menu');
-    this.$logo = $('.js-nav-logo');
+    this.$list = $('.js-nav-list');
     this.$link = $('.js-nav-link');
     this.$nav = $('.js-nav');
   },
@@ -51,9 +51,11 @@ let nav = {
     TweenMax.staggerTo(this.$link, 0.4, {
       y: 0,
       opacity: 1,
-      delay: 0.4,
+      delay: 0.15,
       ease: Power2.easeOut
     }, 0.03);
+
+    TweenMax.set(this.$list, { position: 'absolute', delay: 1 });
   },
 
   close() {
@@ -70,6 +72,8 @@ let nav = {
       opacity: 0,
       y: -16
     });
+
+    TweenMax.set(this.$list, { position: 'fixed', delay: 0.4 });
 
     window.setTimeout( () => {
       this.$nav.removeClass('is-open');
