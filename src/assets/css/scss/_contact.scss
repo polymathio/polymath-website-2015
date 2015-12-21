@@ -5,10 +5,14 @@
     height: 100%;
     top: 0;
     left: 0;
-    padding: 4rem 4rem;
+    padding: 4rem;
     
     border-radius: 2px;
     background: rgba(color(black), 1);
+
+    @media screen and (max-width: break(s)) {
+      padding: 1.5rem;
+    }
 
     &.is-expanded {
       overflow: auto;

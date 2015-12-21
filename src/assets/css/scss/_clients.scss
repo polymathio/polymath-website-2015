@@ -17,6 +17,10 @@
       width: 1px;
       background: radial-gradient(rgba(color(black), 0.3) 0%, rgba(color(black), 0) 80%);
     }
+
+    @media screen and (max-width: break(s)) {
+      
+    }
   }
   
   &__tile {

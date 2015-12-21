@@ -34,6 +34,8 @@ let nav = {
     
     this.$nav.addClass('is-open');
 
+    TweenMax.set(this.$menu, { opacity: 1 });
+
     TweenMax.to(this.$menu, 0.5, {
       height: '100%',
       width: '100%',
@@ -59,11 +61,15 @@ let nav = {
   },
 
   close() {
+    let winW = $(window).width();
+    let top = winW < 640 ? 0 : '1.5rem';
+    let right = winW < 640 ? 0 : '1.5rem';
+
     TweenMax.to(this.$menu, 0.4, {
       height: '4.7rem',
       width: '4.9rem',
-      top: '1.5rem',
-      right: '1.5rem',
+      top: top,
+      right: right,
       'pointer-events': 'none',
       ease: Power2.easeOut
     });
@@ -74,6 +80,7 @@ let nav = {
     });
 
     TweenMax.set(this.$list, { position: 'fixed', delay: 0.4 });
+    TweenMax.set(this.$menu, { opacity: 0, delay: 0.5 });
 
     window.setTimeout( () => {
       this.$nav.removeClass('is-open');

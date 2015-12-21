@@ -60,9 +60,11 @@ Box Helpers
   .padding--lr-#{$i}{
     padding-left: $i + 0rem;
     padding-right: $i + 0rem;
+  }
 
-    @media screen and (max-width: break(s)) {
-      padding: 1.5rem;
+  @media screen and (max-width: break(s)) {
+    .margin--b-#{$i}--s {
+      margin-bottom: $i + 0rem;
     }
   }
 }

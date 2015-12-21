@@ -16,17 +16,32 @@ $float-break: 860px;
     width: 300px;
   }
 
+  @media screen and (max-width: break(m)) {
+    display: block;
+    float: none;
+    width: 95%;
+    margin: 2rem auto;
+  }
+
   p {
     margin-bottom: 1.5rem;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 1.5rem;
     line-height: 1.4em;
+
+    @media screen and (max-width: break(s)) {
+      font-size: 1.25rem;
+    }
   }
 
   cite {
     font-size: 1rem;
     font-style: normal;
+
+    @media screen and (max-width: break(s)) {
+      font-size: 0.8rem;
+    }
   }
 
   a {
@@ -42,6 +57,10 @@ $float-break: 860px;
     &:hover, &:active, &:focus {
       opacity: 1;
     }
+
+    @media screen and (max-width: break(s)) {
+      font-size: 0.7rem;
+    }
   }
 
 
@@ -52,13 +71,24 @@ $float-break: 860px;
     @media screen and (max-width: $float-break) {
       margin-right: 0;
     }
+
+    @media screen and (max-width: break(m)) {
+      margin: 2rem auto;
+      float: none;
+    }
   }
 
   &--left {
     float: left;
     margin-left: -110px;
+
     @media screen and (max-width: $float-break) {
       margin-left: 0;
+    }
+
+    @media screen and (max-width: break(m)) {
+      margin: 2rem auto;
+      float: none;
     }
   }
   

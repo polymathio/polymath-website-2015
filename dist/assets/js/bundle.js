@@ -9711,6 +9711,9 @@
 	    var top = this.$clonee.offset().top;
 	    var left = this.$clonee.offset().left;
 
+	    var winW = (0, _jquery2.default)(window).width();
+	    var pLeft = winW < 640 ? '1.5rem' : '5.5rem';
+
 	    this.$clone.addClass('is-expanded');
 
 	    //Clone
@@ -9719,7 +9722,7 @@
 	      width: '100%',
 	      top: 0,
 	      left: 0,
-	      paddingLeft: '5.5rem',
+	      paddingLeft: pLeft,
 	      position: 'fixed'
 	    });
 
@@ -9767,7 +9770,7 @@
 	      width: w,
 	      top: top,
 	      left: left,
-	      paddingLeft: '4rem',
+	      paddingLeft: 'inherit',
 	      ease: Power3.easeOut,
 	      overwrite: 'all'
 	    });
@@ -12002,6 +12005,8 @@
 
 	    this.$nav.addClass('is-open');
 
+	    TweenMax.set(this.$menu, { opacity: 1 });
+
 	    TweenMax.to(this.$menu, 0.5, {
 	      height: '100%',
 	      width: '100%',
@@ -12028,11 +12033,15 @@
 	  close: function close() {
 	    var _this2 = this;
 
+	    var winW = (0, _jquery2.default)(window).width();
+	    var top = winW < 640 ? 0 : '1.5rem';
+	    var right = winW < 640 ? 0 : '1.5rem';
+
 	    TweenMax.to(this.$menu, 0.4, {
 	      height: '4.7rem',
 	      width: '4.9rem',
-	      top: '1.5rem',
-	      right: '1.5rem',
+	      top: top,
+	      right: right,
 	      'pointer-events': 'none',
 	      ease: Power2.easeOut
 	    });
@@ -12043,6 +12052,7 @@
 	    });
 
 	    TweenMax.set(this.$list, { position: 'fixed', delay: 0.4 });
+	    TweenMax.set(this.$menu, { opacity: 0, delay: 0.5 });
 
 	    window.setTimeout(function () {
 	      _this2.$nav.removeClass('is-open');

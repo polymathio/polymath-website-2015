@@ -39,6 +39,13 @@ $cols: 12;
     .#{$grid-column-namespace}--push-#{$i} {
       margin-left: $width + 0%;
     }
+    
+    .#{$grid-column-namespace}-#{$i}--s {
+      @media screen and (max-width: break(s)) {
+        width: $width + 0%;
+      }
+    }
+    
   }
   
   .#{$grid-column-namespace}--centered {

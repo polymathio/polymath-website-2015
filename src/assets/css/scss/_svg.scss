@@ -85,8 +85,9 @@
 }
 
 .svg--client {
-  width: 100px;
-  height: 100px;
+  height: auto;
+  width: 70%;
+  max-width: 100px;
 
   path {
     fill: rgba(color(black), 0.67);

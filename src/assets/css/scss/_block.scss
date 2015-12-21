@@ -2,21 +2,71 @@
   position: relative;
   margin-bottom: $panel-gutters;
   padding: 2rem;
-  border-radius: 2px;
+  border-radius: 1px;
 
   @media screen and (max-width: break(s)) {
     margin-bottom: 0;
-    padding: 1rem;
+    padding: 2rem 1rem;
     border-radius: 0;
   }
 
   &--hero {
     height: 100%;
+    @media screen and (max-width: break(s)) {
+      height: auto;
+      padding: 12rem 0;
+    }
   }
 
   &--home {
     background: url(../images/placeholder-hero.jpg) center no-repeat;
     background-size: cover;
+  }
+
+  &--white {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+
+    @media screen and (max-width: break(s)) {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
+
+  &--footer {
+    background: rgba(color(black), 1);
+    padding: 2rem 4rem;
+
+    @media screen and (max-width: break(s)) {
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  &--footer-right {
+    background: color(gray);
+    padding: 4rem;
+
+    @media screen and (max-width: break(s)) {
+      padding: 1.5rem;
+    }
+  }
+  
+  &--third {
+    background: rgba(color(black), 1);
+    @media screen and (max-width: break(s)) {
+      border-bottom: 1px solid rgba(color(white), 0.1);
+    }
+  }
+
+  &--featured-post {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    background: color(green);
+
+    @media screen and (max-width: break(s)) {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
   }
 
   &--dark {

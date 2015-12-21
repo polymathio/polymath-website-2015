@@ -43,6 +43,9 @@ let contact = {
     let top = this.$clonee.offset().top;
     let left = this.$clonee.offset().left;
 
+    let winW = $(window).width();
+    let pLeft = winW < 640 ? '1.5rem' : '5.5rem';
+
     this.$clone.addClass('is-expanded');
 
     //Clone
@@ -51,7 +54,7 @@ let contact = {
       width: '100%',
       top: 0,
       left: 0,
-      paddingLeft: '5.5rem',
+      paddingLeft: pLeft,
       position: 'fixed'
     });
 
@@ -100,7 +103,7 @@ let contact = {
       width: w,
       top: top,
       left: left,
-      paddingLeft: '4rem',
+      paddingLeft: 'inherit',
       ease: Power3.easeOut,
       overwrite: 'all'
     });
