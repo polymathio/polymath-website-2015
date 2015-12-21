@@ -30,8 +30,6 @@ let nav = {
   },
 
   expand() {
-    console.log('expand');
-    
     this.$nav.addClass('is-open');
 
     TweenMax.set(this.$menu, { opacity: 1 });

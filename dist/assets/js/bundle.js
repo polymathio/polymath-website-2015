@@ -9748,7 +9748,7 @@
 	      ease: Power1.easeOut
 	    });
 
-	    TweenMax.set(this.$form, { 'pointer-events': 'auto', delay: 2 });
+	    TweenMax.set(this.$form, { 'pointer-events': 'auto', delay: 1 });
 	  },
 	  close: function close() {
 	    var h = this.$clonee.outerHeight();
@@ -12001,8 +12001,6 @@
 	    }
 	  },
 	  expand: function expand() {
-	    console.log('expand');
-
 	    this.$nav.addClass('is-open');
 
 	    TweenMax.set(this.$menu, { opacity: 1 });
