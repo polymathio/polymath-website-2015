@@ -9748,7 +9748,7 @@
 	      ease: Power1.easeOut
 	    });
 
-	    TweenMax.set(this.$form, { 'pointer-events': 'auto', delay: 2 });
+	    TweenMax.set(this.$form, { 'pointer-events': 'auto', delay: 1 });
 	  },
 	  close: function close() {
 	    var h = this.$clonee.outerHeight();
@@ -12001,8 +12001,6 @@
 	    }
 	  },
 	  expand: function expand() {
-	    console.log('expand');
-
 	    this.$nav.addClass('is-open');
 
 	    TweenMax.set(this.$menu, { opacity: 1 });
@@ -12038,8 +12036,8 @@
 	    var right = winW < 640 ? 0 : '1.5rem';
 
 	    TweenMax.to(this.$menu, 0.4, {
-	      height: '4.7rem',
-	      width: '4.9rem',
+	      height: '4.3rem',
+	      width: '4.5rem',
 	      top: top,
 	      right: right,
 	      'pointer-events': 'none',

@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.t-left {
+  text-align: left;
+}
+
+.t-right {
+  text-align: right;
+}
+
 .t-uppercase {
   text-transform: uppercase;
 }
@@ -26,7 +34,7 @@
 }
 
 .t-muted {
-  opacity: 0.85;
+  opacity: 0.8;
 }
 
 .t-more-muted {

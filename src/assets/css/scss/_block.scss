@@ -18,14 +18,22 @@
     }
   }
 
+  &--hero--small {
+    height: 70%;
+    @media screen and (max-width: break(s)) {
+      height: auto;
+      padding: 12rem 0;
+    }
+  }
+
   &--home {
     background: url(../images/placeholder-hero.jpg) center no-repeat;
     background-size: cover;
   }
 
   &--white {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 
     @media screen and (max-width: break(s)) {
       padding-top: 3rem;

@@ -80,7 +80,7 @@ let contact = {
       ease: Power1.easeOut
     });
 
-    TweenMax.set(this.$form, { 'pointer-events': 'auto', delay: 2 });
+    TweenMax.set(this.$form, { 'pointer-events': 'auto', delay: 1 });
   },
 
   close() {

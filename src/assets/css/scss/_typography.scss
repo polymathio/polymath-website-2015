@@ -8,7 +8,7 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.667em;
+  line-height: 1.5em;
   @include font($museo, $base-font-size, 300);
 }
 
@@ -24,15 +24,19 @@ body {
   text-rendering: optimizeLegibility;
   color:  color(text);
   letter-spacing: 0.08em;
-  line-height: 1.1em;
+  line-height: 1.17em;
   @include font($museo, 16, 300);
   &::selection{
     //color: #000;
   }
+
+  *+& {
+    padding-top: 0.33em;
+  }
 }
 
 //Header Sizing
-$headers: (h1: 64, h2: 48, h3: 32, h4: 28, h5: 22, h6: 16);
+$headers: (h1: 63, h2: 48, h3: 33, h4: 27, h5: 24, h6: 18);
 
 @each $header, $size in $headers {
   #{$header} {
@@ -42,7 +46,7 @@ $headers: (h1: 64, h2: 48, h3: 32, h4: 28, h5: 22, h6: 16);
 }
 
 p, input, textarea, a, cite, label {
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
 }
 
 a {

@@ -409,7 +409,7 @@ ul, ol, dd,
 p, figure,
 pre, table, fieldset, hr {
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 html, body {
@@ -637,16 +637,16 @@ textarea:focus, input:focus {
 
 html {
   color: #1C1D27;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.667em;
+  line-height: 1.5em;
   font-family: "museo-sans", sans-serif;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 18px;
   font-size: 1rem;
 }
 
@@ -668,45 +668,48 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
   color: #1C1D27;
   letter-spacing: 0.08em;
-  line-height: 1.1em;
+  line-height: 1.17em;
   font-family: "museo-sans", sans-serif;
   font-weight: 300;
   font-size: 16px;
-  font-size: 1rem;
+  font-size: 0.88889rem;
+}
+* + h1, * + h2, * + h3, * + h4, * + h5, * + h6 {
+  padding-top: 0.33em;
 }
 
 h1 {
-  font-size: 64px;
-  font-size: 4rem;
+  font-size: 63px;
+  font-size: 3.5rem;
 }
 
 h2 {
   font-size: 48px;
-  font-size: 3rem;
+  font-size: 2.66667rem;
 }
 
 h3 {
-  font-size: 32px;
-  font-size: 2rem;
+  font-size: 33px;
+  font-size: 1.83333rem;
 }
 
 h4 {
-  font-size: 28px;
-  font-size: 1.75rem;
+  font-size: 27px;
+  font-size: 1.5rem;
 }
 
 h5 {
-  font-size: 22px;
-  font-size: 1.375rem;
+  font-size: 24px;
+  font-size: 1.33333rem;
 }
 
 h6 {
-  font-size: 16px;
+  font-size: 18px;
   font-size: 1rem;
 }
 
 p, input, textarea, a, cite, label {
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
 }
 
 a {
@@ -885,13 +888,22 @@ strong {
     padding: 12rem 0;
   }
 }
+.block--hero--small {
+  height: 70%;
+}
+@media screen and (max-width: 640px) {
+  .block--hero--small {
+    height: auto;
+    padding: 12rem 0;
+  }
+}
 .block--home {
   background: url(../images/placeholder-hero.jpg) center no-repeat;
   background-size: cover;
 }
 .block--white {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 @media screen and (max-width: 640px) {
   .block--white {
@@ -1100,6 +1112,14 @@ strong {
   text-align: center;
 }
 
+.t-left {
+  text-align: left;
+}
+
+.t-right {
+  text-align: right;
+}
+
 .t-uppercase {
   text-transform: uppercase;
 }
@@ -1124,7 +1144,7 @@ strong {
 }
 
 .t-muted {
-  opacity: 0.85;
+  opacity: 0.8;
 }
 
 .t-more-muted {
@@ -1789,7 +1809,7 @@ Box Helpers
 }
 .bio-tile__name {
   letter-spacing: 0.05em;
-  font-size: 2.1rem;
+  font-size: 2rem;
   -webkit-transition: 0.3s;
           transition: 0.3s;
 }
@@ -1880,8 +1900,8 @@ Box Helpers
   position: fixed;
   top: 1.5rem;
   right: 1.5rem;
-  height: 4.7rem;
-  width: 4.9rem;
+  height: 4.3rem;
+  width: 4.5rem;
   opacity: 0;
   pointer-events: none;
   -webkit-transform: translate(0, 1rem);
@@ -2064,7 +2084,7 @@ Box Helpers
 .nav__logo {
   position: absolute;
   display: block;
-  padding: 1rem 1.2rem 1.2rem;
+  padding: 0.8rem 1rem 1rem;
   z-index: 100;
   border-radius: 1px;
   background: #1C1D27;
@@ -2128,8 +2148,8 @@ Box Helpers
 }
 .nav__burger {
   position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.1rem;
+  height: 2.1rem;
   -webkit-transition: 0.2s ease-out;
           transition: 0.2s ease-out;
 }
@@ -2156,7 +2176,7 @@ Box Helpers
   width: 100%;
 }
 .nav__burger:after {
-  top: 25%;
+  top: 18%;
   left: 10%;
   margin-top: -1px;
   width: 80%;
@@ -2166,8 +2186,8 @@ Box Helpers
   position: absolute;
   top: 0;
   left: 0;
-  width: 4.9rem;
-  height: 4.7rem;
+  width: 4.5rem;
+  height: 4.3rem;
   border-radius: 1px;
   opacity: 0;
   -webkit-transition: 0.3s;
@@ -2210,8 +2230,8 @@ Box Helpers
   position: fixed;
   right: 1.5rem;
   top: 1.5rem;
-  width: 4.9rem;
-  height: 4.7rem;
+  width: 4.5rem;
+  height: 4.3rem;
   background: #90C4B3;
   border-radius: 1px;
   pointer-events: none;
@@ -2249,7 +2269,7 @@ Box Helpers
   padding: 1.4rem 2rem;
   border-radius: 2px;
   text-decoration: none;
-  font-size: 4rem;
+  font-size: 3rem;
   line-height: 4.5rem;
   font-weight: 300;
   text-transform: uppercase;

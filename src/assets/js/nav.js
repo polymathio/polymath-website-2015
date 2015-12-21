@@ -30,8 +30,6 @@ let nav = {
   },
 
   expand() {
-    console.log('expand');
-    
     this.$nav.addClass('is-open');
 
     TweenMax.set(this.$menu, { opacity: 1 });
@@ -66,8 +64,8 @@ let nav = {
     let right = winW < 640 ? 0 : '1.5rem';
 
     TweenMax.to(this.$menu, 0.4, {
-      height: '4.7rem',
-      width: '4.9rem',
+      height: '4.3rem',
+      width: '4.5rem',
       top: top,
       right: right,
       'pointer-events': 'none',
