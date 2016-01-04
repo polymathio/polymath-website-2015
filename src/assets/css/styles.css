@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 *,
 *:after,
@@ -1834,8 +1835,18 @@ Box Helpers
   opacity: 0.85;
 }
 
-.clients__grid {
+.clients__slider {
+  position: relative;
+  height: 228px;
+}
+.clients__slide {
+  left: 0;
+  width: 100%;
   padding-left: 0;
+  position: absolute;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
 }
 .clients__col {
   position: relative;
@@ -1861,6 +1872,33 @@ Box Helpers
   height: 1px;
   background: -webkit-radial-gradient(rgba(28, 29, 39, 0.3) 0%, rgba(28, 29, 39, 0) 75%);
   background: radial-gradient(rgba(28, 29, 39, 0.3) 0%, rgba(28, 29, 39, 0) 75%);
+}
+.clients__controls {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.clients__controls li {
+  display: inline-block;
+}
+.clients__slider-button {
+  display: block;
+  padding: 0.66rem;
+  text-decoration: none;
+  opacity: 0.4;
+}
+.clients__slider-button:hover {
+  opacity: 0.7;
+}
+.clients__slider-button.is-active {
+  opacity: 1;
+  pointer-events: none;
+}
+.clients__slider-button:before {
+  display: block;
+  content: "•";
+  font-size: 21px;
+  line-height: 12px;
 }
 
 .contact-filler {

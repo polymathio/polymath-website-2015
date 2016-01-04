@@ -6,6 +6,7 @@ import svg from'./svg';
 import contact from'./contact';
 import validation from'./validation';
 import nav from'./nav';
+import clients from'./clients';
 
 $(document).ready( () => {
   //events.init();
@@ -14,4 +15,5 @@ $(document).ready( () => {
   contact.init();
   validation.init();
   nav.init();
+  clients.init();
 });

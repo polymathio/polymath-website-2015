@@ -1,6 +1,19 @@
 .clients {
-  &__grid {
+  &__slider {
+    position: relative;
+    height: 228px;
+  }
+
+  &__slide {
+    left: 0;
+    width: 100%;
     padding-left: 0;
+    position: absolute;
+
+    text-align: center;
+
+    opacity: 0;
+    visibility: hidden;
   }
 
   &__col {
@@ -19,7 +32,7 @@
     }
 
     @media screen and (max-width: break(s)) {
-      
+
     }
   }
   
@@ -33,5 +46,38 @@
     height: 1px;
     background: radial-gradient(rgba(color(black), 0.3) 0%, rgba(color(black), 0) 75%);
   }
+  
+  &__controls {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 
+    li {
+      display: inline-block;
+    }
+  }
+
+  &__slider-button {
+    display: block;
+    padding: 0.66rem;
+    text-decoration: none;
+
+    opacity: 0.4;
+
+    &:hover {
+      opacity: 0.7;      
+    }
+
+    &.is-active {
+      opacity: 1;
+      pointer-events: none;
+    }
+
+    &:before {
+      display: block;
+      content: "•";
+      font-size: 21px;
+      line-height: 12px;
+    }
+  }
 }

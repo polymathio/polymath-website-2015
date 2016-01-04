@@ -74,6 +74,10 @@
 
 	var _nav2 = _interopRequireDefault(_nav);
 
+	var _clients = __webpack_require__(13);
+
+	var _clients2 = _interopRequireDefault(_clients);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _jquery2.default)(document).ready(function () {
@@ -83,6 +87,7 @@
 	  _contact2.default.init();
 	  _validation2.default.init();
 	  _nav2.default.init();
+	  _clients2.default.init();
 	});
 
 /***/ },
@@ -12059,6 +12064,68 @@
 	};
 
 	exports.default = nav;
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _jquery = __webpack_require__(1);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var clients = {
+	  init: function init() {
+	    this._cacheDOM();
+	    if (this.$slider.length > 0) {
+	      this._buildSlider();
+	      this._bindEvents();
+	    }
+	  },
+	  _cacheDOM: function _cacheDOM() {
+	    this.$slider = (0, _jquery2.default)('.js-clients-slider');
+	    this.$slides = (0, _jquery2.default)('.js-clients-slide');
+	    this.$buttons = (0, _jquery2.default)('.js-clients-button');
+	  },
+	  _bindEvents: function _bindEvents() {
+	    this.$buttons.on('click', function (e) {
+	      e.preventDefault();
+	      clients.goToSlide((0, _jquery2.default)(this).data('target'));
+	    });
+	  },
+	  _buildSlider: function _buildSlider() {
+	    this.$buttons.each(function (i) {
+	      (0, _jquery2.default)(this).data('target', i);
+	    });
+
+	    this.limit = this.$slides.length;
+	    this.current = 0;
+
+	    TweenMax.set(this.$slides[this.current], { autoAlpha: 1 });
+	    this.$buttons.eq(this.current).addClass('is-active');
+	  },
+	  goToSlide: function goToSlide(target) {
+	    var x = target < this.current ? 18 : -18;
+	    //console.log(`target: ${target} current: ${this.current} x: ${x}`);
+
+	    this.$buttons.eq(this.current).removeClass('is-active');
+	    TweenMax.to(this.$slides[this.current], 0.2, { autoAlpha: 0, x: x });
+
+	    this.current = target;
+	    TweenMax.set(this.$slides[this.current], { x: -x });
+	    TweenMax.to(this.$slides[this.current], 0.2, { autoAlpha: 1, x: 0, delay: 0.1 });
+	    this.$buttons.eq(this.current).addClass('is-active');
+	  }
+	};
+
+	exports.default = clients;
 
 /***/ }
 /******/ ]);
