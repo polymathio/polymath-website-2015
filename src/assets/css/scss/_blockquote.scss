@@ -36,7 +36,7 @@ $float-break: 860px;
   }
 
   cite {
-    font-size: 1rem;
+    font-size: 0.834rem;
     font-style: normal;
 
     @media screen and (max-width: break(s)) {
@@ -47,7 +47,7 @@ $float-break: 860px;
   a {
     float: right;
     color: color(white);
-    font-size: 0.75rem;
+    font-size: 0.667rem;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 300;

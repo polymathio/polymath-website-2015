@@ -7,6 +7,10 @@
   border-radius: 2px;
   overflow: hidden;
 
+  @media screen and (max-width: break(s)) {
+    margin-bottom: 0;
+  }
+
   &__image {
     position: absolute;
     top: 50%;
@@ -19,11 +23,11 @@
   
   &__info {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    padding: 2rem;
+    top: 0.833rem;
+    left: 0.833rem;
+    right: 0.833rem;
+    bottom: 0.833rem;
+    padding: 1.5rem 1rem;
     background: rgba(color(green), 0.95);
     border-radius: 2px;
 
@@ -31,7 +35,21 @@
     transition: 0.15s ease-out;
     transform: translate(0, 1em);
     box-shadow: 4px 4px 16px rgba(color(black), 0.2), 0 3px 6px rgba(0,0,0,0.1);
+
+    @media screen and (max-width: break(xl)) {
+      padding: 1.333rem 0.833rem;
+    }
+
+    @media screen and (max-width: 1080px) {
+      /* top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 0; */
+    }
   }
+
+// 0.667 0.833, 1.167em, 1.333em 1.500em 1.667em 1.833em
 
   &__name, &__title {
     color: color(white);
@@ -41,15 +59,31 @@
 
   &__name {
     letter-spacing: 0.05em;
-    font-size: 2rem;
+    font-size: 1.833rem;
     transition: 0.3s;
+    margin-bottom: 1rem;
+
+    @media screen and (max-width: break(xl)) {
+      //font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: break(l)) {
+      font-size: 1.333rem;
+    }
   }
 
   &__title {
+    margin-left: 3px;
     text-transform: uppercase; 
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.833rem;
+    line-height: 1.5em;
     transition: 0.37s;
+
+    @media screen and (max-width: break(l)) {
+      font-size: 0.667rem;
+      line-height: 1.333em;
+    }
   }
 
   &:hover, &:active, &:focus {
@@ -66,5 +100,15 @@
     .bio-tile__title {
       opacity: 0.85;
     }
+  }
+}
+
+.grid .bio-col {
+  @media screen and (max-width: 1140px) {
+    width: 33.33%;
+  }
+
+  @media screen and (max-width: break(m)) {
+    width: 50%;
   }
 }

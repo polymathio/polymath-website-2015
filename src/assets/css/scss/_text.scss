@@ -19,6 +19,14 @@
   a {
     color: color(white);
   }
+
+  .t-muted, &.t-muted {
+    color: rgba(color(white), 0.8);
+  }
+
+  .t-more-muted, &.t-more-muted {
+    color: rgba(color(white), 0.67);
+  }
 }
 
 .t-black {
@@ -34,11 +42,11 @@
 }
 
 .t-muted {
-  opacity: 0.8;
+  color: rgba(color(text), 0.8);
 }
 
 .t-more-muted {
-  opacity: 0.67;
+  color: rgba(color(text), 0.67);
 }
 
 .t-no-underline {
