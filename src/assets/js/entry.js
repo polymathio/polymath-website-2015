@@ -7,6 +7,7 @@ import contact from'./contact';
 import validation from'./validation';
 import nav from'./nav';
 import clients from'./clients';
+import Fitvids from './vendor/fitvids';
 
 $(document).ready( () => {
   //events.init();
@@ -16,4 +17,6 @@ $(document).ready( () => {
   validation.init();
   nav.init();
   clients.init();
+
+  $('.js-video-container').fitVids();
 });

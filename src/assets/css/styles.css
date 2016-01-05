@@ -408,7 +408,8 @@ th {
 
 ul, ol, dd,
 p, figure,
-pre, table, fieldset, hr {
+pre, table, fieldset, hr,
+iframe, .fluid-width-video-wrapper, img {
   margin-top: 0;
   margin-bottom: 18px;
 }
@@ -435,6 +436,23 @@ textarea:focus, input:focus {
   .wrapper {
     padding: 0;
   }
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 0 0 18px 0;
+}
+figure .fluid-width-video-wrapper, figure img {
+  margin-bottom: 0.333rem;
+}
+figure figcaption {
+  text-align: center;
+  font-size: 0.833em;
+  font-style: italic;
+  line-height: 1.167em;
 }
 
 .grid {
@@ -644,7 +662,7 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.5em;
+  line-height: 1.667em;
   font-family: "museo-sans", sans-serif;
   font-weight: 300;
   font-size: 18px;

@@ -1,6 +1,7 @@
 ul,ol,dd,
 p,figure,
-pre,table,fieldset,hr {
+pre,table,fieldset,hr,
+iframe, .fluid-width-video-wrapper, img {
   margin-top: 0;
   margin-bottom: base(1);
 }
@@ -29,5 +30,24 @@ textarea:focus, input:focus{
 
   @media screen and (max-width: break(s)) {
     padding: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 0 0 base(1) 0;
+
+  .fluid-width-video-wrapper, img {
+    margin-bottom: 0.333rem;
+  }
+
+  figcaption {
+    text-align: center;
+    font-size: 0.833em;
+    font-style: italic;
+    line-height: 1.167em;
   }
 }

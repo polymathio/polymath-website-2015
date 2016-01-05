@@ -1,0 +1,53 @@
+{% extends "layouts/layout.html" %}
+
+{% block title %}American Enterprise Instituete{% endblock %}
+{% block content %}
+
+  <div class="block block--hero block--hero--small block--dark">
+    <div class="va--table">
+      <div class="va--table-cell">
+        <div class="container">
+          <div class="grid">
+            <div class="col-12 t-center">
+              <h1 class="t-uppercase t-white">American Enterprise Instituete</h1>    
+            </div>
+            <div class="col-8 col-12--s col--centered t-center">
+              <p class="t-white t-muted">Values &amp; Capitalism Program</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+
+  <div class="block">
+    <div class="container--small margin-">
+      <h5>How do you provoke thoughtful discussions on thought-filled topics?</h5>
+      <p class="t-more-muted">You dream big… Let’s make a moral case for free markets on college campuses around the country. Let’s take complex ideas and package them in a way that’s accessible to students and workable for professors. Let’s impact public scholarship on human flourishing and social justice. You design videos, animations, slide decks, lecture notes, course outlines, and more to inspire stimulating classroom conversations. You deploy them across social media and email channels and house them on a beautiful website and resource portal—easy to access and intuitive to use..</p>
+    </div>
+
+    <div class="container js-video-container margin--t-2">
+      <figure>
+        <iframe src="https://player.vimeo.com/video/111599760" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <figcaption class="t-more-muted">A Video</figcaption>  
+      </figure>
+      
+      
+      <figure class="margin--tb-2">
+        <img class="" src="./assets/images/aei-web.jpg" alt="AEI Website">
+        <figcaption class="t-more-muted">Values &amp; Capitalism Website</figcaption>  
+      </figure>
+      
+    </div>
+  </div>
+
+  <div class="block block--featured-post">
+    <p class="t-white t-muted margin--b-7">Featured Blog Post</p>
+    <h4 class="t-uppercase t-white"><a href="" class="t-no-underline">Featured Blog Post</a></h4>
+    <p class="t-white t-muted">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+  </div>
+
+  {% include "includes/footer.html" %}
+ 
+  
+{% endblock %}
