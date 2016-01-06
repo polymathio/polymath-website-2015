@@ -9723,7 +9723,8 @@
 	    var left = this.$clonee.offset().left;
 
 	    var winW = (0, _jquery2.default)(window).width();
-	    var pLeft = winW < 640 ? '1.5rem' : '5.5rem';
+	    var pLeft = winW < 768 ? '1.5rem' : '5.5rem';
+	    var pLeftInit = winW < 768 ? '1.5rem' : '4rem';
 
 	    this.$clone.addClass('is-expanded');
 
@@ -9742,7 +9743,7 @@
 	      width: w,
 	      top: top,
 	      left: left,
-	      paddingLeft: '4rem',
+	      paddingLeft: pLeftInit,
 	      ease: Power3.easeOut
 	    });
 
@@ -9766,6 +9767,8 @@
 	    var w = this.$clonee.outerWidth();
 	    var top = this.$clonee.offset().top;
 	    var left = this.$clonee.offset().left;
+	    var winW = (0, _jquery2.default)(window).width();
+	    var pLeftInit = winW < 768 ? '1.5rem' : '4rem';
 
 	    this.$clone.removeClass('is-expanded');
 
@@ -9781,7 +9784,7 @@
 	      width: w,
 	      top: top,
 	      left: left,
-	      paddingLeft: 'inherit',
+	      paddingLeft: pLeftInit,
 	      ease: Power3.easeOut,
 	      overwrite: 'all'
 	    });
@@ -12016,7 +12019,7 @@
 
 	    TweenMax.set(this.$menu, { opacity: 1 });
 
-	    TweenMax.to(this.$menu, 0.5, {
+	    TweenMax.to(this.$menu, 0.4, {
 	      height: '100%',
 	      width: '100%',
 	      top: 0,
@@ -12030,7 +12033,7 @@
 	      opacity: 0
 	    });
 
-	    TweenMax.staggerTo(this.$link, 0.4, {
+	    TweenMax.staggerTo(this.$link, 0.3, {
 	      y: 0,
 	      opacity: 1,
 	      delay: 0.15,

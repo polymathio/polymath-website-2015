@@ -23,7 +23,7 @@
   <div class="block block--white">
     <div class="container">
       <div class="grid">
-        <div class="col-8 col--centered t-center">
+        <div class="col-8 col-10--m col-12--s col--centered t-center">
           <h2 class="t-uppercase t-center">About Us</h2>
 
           <h5 class="t-muted margin--t-2">We don’t do boxes.</h5>
@@ -38,7 +38,7 @@
   </div>
 
   <div class="grid">
-    <div class="col-4 col-12--s">
+    <div class="col--article">
       <div class="block block--third js-block" data-group="thirds">
         <h3 class="t-uppercase t-white">Dream</h3>
         <div class="block__svg-wrapper">{% include "includes/svg-dream.html" %}</div>
@@ -48,7 +48,7 @@
         </div>
       </div>
     </div>
-    <div class="col-4 col-12--s">
+    <div class="col--article">
       <div class="block block--third js-block" data-group="thirds">
         <h3 class="t-uppercase t-white">Design</h3>
         <div class="block__svg-wrapper">{% include "includes/svg-design.html" %}</div>
@@ -58,7 +58,7 @@
         </div>
       </div>
     </div>
-    <div class="col-4 col-12--s">
+    <div class="col--article">
       <div class="block block--third js-block" data-group="thirds">
         <h3 class="t-uppercase t-white">Deploy</h3>
         <div class="block__svg-wrapper">{% include "includes/svg-deploy.html" %}</div>
@@ -225,12 +225,10 @@
     </div>
   </div>
   
-  <div class="material-wrapper">
-    <div class="block block--featured-post material-card">
-      <p class="t-white t-muted margin--b-7">Featured Blog Post</p>
-      <h4 class="t-uppercase t-white"><a href="" class="t-no-underline">Blog Post Title</a></h4>
-      <p class="t-white">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-    </div>
+  <div class="block block--featured-post">
+    <p class="t-white t-muted margin--b-7">Featured Blog Post</p>
+    <h4 class="t-uppercase t-white"><a href="" class="t-no-underline">Blog Post Title</a></h4>
+    <p class="t-white">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
   </div>
 
   {% include "includes/footer.html" %}

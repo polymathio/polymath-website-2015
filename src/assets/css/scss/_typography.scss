@@ -3,6 +3,10 @@ $museo: 'museo-sans', sans-serif;
 html {
   color: color(text);
   font-size: $base-font-size + 0px;
+
+  @media screen and (max-width: break(s)) {
+    font-size: 15px; 
+  }
 }
 
 body {
@@ -57,15 +61,16 @@ a {
 strong {
   font-weight: 400;
 }
+
 @media screen and (max-width: break(m)) {
-  h1 { font-size: 50px; }
-  h2 { font-size: 44px; }
+  h1 { font-size: 51px; }
+  h2 { font-size: 45px; }
 }
 
 @media screen and (max-width: break(s)) {
-  h1 { font-size: 34px; }
+  h1 { font-size: 33px; }
   h2 { font-size: 30px; }
-  h3 { font-size: 26px; }
-  h4 { font-size: 22px; }
-  h5 { font-size: 20px; }
+  h3 { font-size: 27px; }
+  h4 { font-size: 24px; }
+  h5 { font-size: 21px; }
 }

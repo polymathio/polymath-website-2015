@@ -44,7 +44,8 @@ let contact = {
     let left = this.$clonee.offset().left;
 
     let winW = $(window).width();
-    let pLeft = winW < 640 ? '1.5rem' : '5.5rem';
+    let pLeft = winW < 768 ? '1.5rem' : '5.5rem';
+    let pLeftInit = winW < 768 ? '1.5rem' : '4rem';
 
     this.$clone.addClass('is-expanded');
 
@@ -63,7 +64,7 @@ let contact = {
       width: w,
       top: top,
       left: left,
-      paddingLeft: '4rem',
+      paddingLeft: pLeftInit,
       ease: Power3.easeOut
     });
 
@@ -88,6 +89,8 @@ let contact = {
     let w = this.$clonee.outerWidth();
     let top = this.$clonee.offset().top;
     let left = this.$clonee.offset().left;
+    let winW = $(window).width();
+    let pLeftInit = winW < 768 ? '1.5rem' : '4rem';
 
     this.$clone.removeClass('is-expanded');
 
@@ -103,7 +106,7 @@ let contact = {
       width: w,
       top: top,
       left: left,
-      paddingLeft: 'inherit',
+      paddingLeft: pLeftInit,
       ease: Power3.easeOut,
       overwrite: 'all'
     });

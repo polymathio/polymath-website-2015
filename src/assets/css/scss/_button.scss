@@ -1,4 +1,5 @@
 .button {
+  position: relative;
   display: inline-block;
   padding: 0.7em 1em;
 
@@ -11,19 +12,24 @@
   text-transform: uppercase;
   letter-spacing: 0.12em;
 
+  &:before {
+    position: absolute;
+    content: '';
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    box-shadow: 4px 3px 16px rgba(color(black), 0.19);
+    opacity: 0;
+    transition: 0.15s;
+  }
+
   &:hover, &:active, &:focus {
     background: color(green);
     color: color(white);
-  }
-  
-  &--filled {
-    background: color(green);
-    border: 2px solid color(green);
-    color: color(white);
 
-    &:hover, &:active, &:focus {
-      background: rgba(color(green), 0);
-      color: color(green);
+    &:before {
+      opacity: 1;
     }
   }
 

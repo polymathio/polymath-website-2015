@@ -6,7 +6,7 @@
 
   @media screen and (max-width: break(s)) {
     margin-bottom: 0;
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
     border-radius: 0;
   }
 
@@ -53,15 +53,23 @@
   &--footer-right {
     background: color(gray);
     padding: 4rem;
-
-    @media screen and (max-width: break(s)) {
+    
+    @media screen and (max-width: break(m)) {
       padding: 1.5rem;
     }
   }
   
   &--third {
+    min-height: 560px;
     background: rgba(color(black), 1);
+
+    @media screen and (max-width: break(third)) {
+      height: auto !important;
+      min-height: 0;
+    }
+
     @media screen and (max-width: break(s)) {
+      margin: 0 1.5rem 1.5rem;
       border-bottom: 1px solid rgba(color(white), 0.1);
     }
   }
@@ -71,7 +79,7 @@
     padding-right: 4rem;
     background: color(green);
 
-    @media screen and (max-width: break(s)) {
+    @media screen and (max-width: break(m)) {
       padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
@@ -89,15 +97,15 @@
     background: color(green);
   }
 
-  &--third {
-    min-height: 560px;
-  }
-
   &__bottom {
     position: absolute;
     bottom: 2rem;
     left: 2rem;
     right: 2rem;
+
+    @media screen and (max-width: break(third)) {
+      position: static;
+    }
   }
 
   &__svg-wrapper {

@@ -10,7 +10,7 @@
     border-radius: 2px;
     background: rgba(color(black), 1);
 
-    @media screen and (max-width: break(s)) {
+    @media screen and (max-width: break(m)) {
       padding: 1.5rem;
     }
 
@@ -18,6 +18,10 @@
       overflow: auto;
       .va--table, .va--table-cell {
         display: block;
+      }
+
+      @media screen and (max-width: break(m)) {
+        padding: 6rem 1.5rem;
       }
     }
   }

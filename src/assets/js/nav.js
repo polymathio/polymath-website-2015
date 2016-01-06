@@ -34,7 +34,7 @@ let nav = {
 
     TweenMax.set(this.$menu, { opacity: 1 });
 
-    TweenMax.to(this.$menu, 0.5, {
+    TweenMax.to(this.$menu, 0.4, {
       height: '100%',
       width: '100%',
       top: 0,
@@ -48,7 +48,7 @@ let nav = {
       opacity: 0
     });
 
-    TweenMax.staggerTo(this.$link, 0.4, {
+    TweenMax.staggerTo(this.$link, 0.3, {
       y: 0,
       opacity: 1,
       delay: 0.15,
