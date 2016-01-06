@@ -78,7 +78,8 @@ $cols: 12;
 
 .grid .col--article {
   @extend %col;
-  width: 33%;
+  width: 33.33%;
+  margin-right: -4.6px;
 
   @media screen and (max-width: break(third)) {
     width: 100%;

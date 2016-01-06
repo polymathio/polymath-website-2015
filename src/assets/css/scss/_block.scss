@@ -32,8 +32,8 @@
   }
 
   &--white {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 
     @media screen and (max-width: break(s)) {
       padding-top: 3rem;
@@ -70,7 +70,12 @@
 
     @media screen and (max-width: break(s)) {
       margin: 0 1.5rem 1.5rem;
+      margin: 0 0 -1px;
       border-bottom: 1px solid rgba(color(white), 0.1);
+
+      .col--article:nth-child(2) & {
+        background: rgba(color(black), 0.95);
+      }
     }
   }
 

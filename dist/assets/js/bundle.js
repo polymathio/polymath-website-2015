@@ -9725,6 +9725,7 @@
 	    var winW = (0, _jquery2.default)(window).width();
 	    var pLeft = winW < 768 ? '1.5rem' : '5.5rem';
 	    var pLeftInit = winW < 768 ? '1.5rem' : '4rem';
+	    var pTop = winW < 768 ? '8rem' : '4rem';
 
 	    this.$clone.addClass('is-expanded');
 
@@ -9735,6 +9736,7 @@
 	      top: 0,
 	      left: 0,
 	      paddingLeft: pLeft,
+	      paddingTop: pTop,
 	      position: 'fixed'
 	    });
 
@@ -9744,6 +9746,7 @@
 	      top: top,
 	      left: left,
 	      paddingLeft: pLeftInit,
+	      paddingTop: pLeftInit,
 	      ease: Power3.easeOut
 	    });
 
@@ -9769,6 +9772,7 @@
 	    var left = this.$clonee.offset().left;
 	    var winW = (0, _jquery2.default)(window).width();
 	    var pLeftInit = winW < 768 ? '1.5rem' : '4rem';
+	    var pTop = winW < 768 ? '1.5rem' : '4rem';
 
 	    this.$clone.removeClass('is-expanded');
 
@@ -9785,6 +9789,7 @@
 	      top: top,
 	      left: left,
 	      paddingLeft: pLeftInit,
+	      paddingTop: pTop,
 	      ease: Power3.easeOut,
 	      overwrite: 'all'
 	    });
