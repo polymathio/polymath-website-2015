@@ -119,11 +119,17 @@
 }
 
 .svg--client {
-  height: auto;
+  height: 120px;
+  margin: 20px 0;
   width: 70%;
-  max-width: 100px;
+  max-width: 150px;
 
-  path {
-    fill: rgba(color(black), 0.67);
+  path, circle {
+    fill: rgba(#88898F, 1);
+  }
+
+  &.svg--short {
+    //width: 80%;
+    //max-width: 160px;
   }
 }

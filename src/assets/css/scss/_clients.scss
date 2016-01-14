@@ -1,7 +1,7 @@
 .clients {
   &__slider {
     position: relative;
-    height: 228px;
+    height: 361px;
   }
 
   &__slide {
@@ -16,7 +16,8 @@
     visibility: hidden;
   }
 
-  &__col {
+  .grid &__col {
+    vertical-align: middle;
     position: relative;
     padding-left: 0!important;
 
@@ -37,7 +38,7 @@
   }
   
   &__tile {
-    padding: 2rem 0;
+    height: 160px;
   }
 
   &__horizontal-break {

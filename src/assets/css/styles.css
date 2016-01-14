@@ -1957,12 +1957,13 @@ Box Helpers
 }
 
 .svg--client {
-  height: auto;
+  height: 120px;
+  margin: 20px 0;
   width: 70%;
-  max-width: 100px;
+  max-width: 150px;
 }
-.svg--client path {
-  fill: rgba(28, 29, 39, 0.67);
+.svg--client path, .svg--client circle {
+  fill: #88898f;
 }
 
 /* .material-wrapper {
@@ -2134,7 +2135,7 @@ Box Helpers
 
 .clients__slider {
   position: relative;
-  height: 228px;
+  height: 361px;
 }
 .clients__slide {
   left: 0;
@@ -2145,11 +2146,12 @@ Box Helpers
   opacity: 0;
   visibility: hidden;
 }
-.clients__col {
+.grid .clients__col {
+  vertical-align: middle;
   position: relative;
   padding-left: 0 !important;
 }
-.clients__col:nth-child(-n+3):after {
+.grid .clients__col:nth-child(-n+3):after {
   display: block;
   content: '';
   position: absolute;
@@ -2161,7 +2163,7 @@ Box Helpers
   background: radial-gradient(rgba(28, 29, 39, 0.3) 0%, rgba(28, 29, 39, 0) 80%);
 }
 .clients__tile {
-  padding: 2rem 0;
+  height: 160px;
 }
 .clients__horizontal-break {
   margin: 0;
