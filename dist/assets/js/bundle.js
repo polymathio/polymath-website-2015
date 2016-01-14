@@ -9640,10 +9640,10 @@
 	  _loopStar: function _loopStar() {
 	    if (this.shootingStar) {
 	      var strokeLength = this.shootingStar.getTotalLength();
-	      this.shootingStar.style.strokeDasharray = strokeLength / 3 + ' ' + strokeLength * 2;
-	      this.shootingStar.style.strokeDashoffset = -strokeLength;
+	      this.shootingStar.style.strokeDasharray = strokeLength * 0.25 + ' ' + strokeLength * 3;
+	      this.shootingStar.style.strokeDashoffset = strokeLength * 0.25;
 
-	      TweenMax.to(this.shootingStar, 1.3, { strokeDashoffset: -strokeLength * 3.5, opacity: 0.5, repeat: -1, ease: Power0.easeNone, repeatDelay: 5 });
+	      TweenMax.to(this.shootingStar, 1.3, { strokeDashoffset: -strokeLength * 3, opacity: 0.4, repeat: -1, ease: Power0.easeNone, repeatDelay: 4 });
 	    }
 	  }
 	};
@@ -12024,11 +12024,11 @@
 
 	    TweenMax.set(this.$menu, { opacity: 1 });
 
-	    TweenMax.to(this.$menu, 0.4, {
+	    TweenMax.to(this.$menu, 0.35, {
 	      height: '100%',
 	      width: '100%',
 	      top: 0,
-	      right: 0,
+	      left: 0,
 	      'pointer-events': 'auto',
 	      ease: Power2.easeOut
 	    });
@@ -12051,14 +12051,14 @@
 	    var _this2 = this;
 
 	    var winW = (0, _jquery2.default)(window).width();
-	    var top = winW < 640 ? 0 : '1.5rem';
-	    var right = winW < 640 ? 0 : '1.5rem';
+	    var top = winW < 640 ? 0 : '0.75rem';
+	    var left = winW < 640 ? 0 : '5.75rem';
 
-	    TweenMax.to(this.$menu, 0.4, {
+	    TweenMax.to(this.$menu, 0.35, {
 	      height: '4.3rem',
-	      width: '4.5rem',
+	      width: '4.4rem',
 	      top: top,
-	      right: right,
+	      left: left,
 	      'pointer-events': 'none',
 	      ease: Power2.easeOut
 	    });
@@ -12068,8 +12068,8 @@
 	      y: -16
 	    });
 
-	    TweenMax.set(this.$list, { position: 'fixed', delay: 0.4 });
-	    TweenMax.set(this.$menu, { opacity: 0, delay: 0.5 });
+	    TweenMax.set(this.$list, { position: 'fixed', delay: 0.36 });
+	    TweenMax.set(this.$menu, { opacity: 0, delay: 0.45 });
 
 	    window.setTimeout(function () {
 	      _this2.$nav.removeClass('is-open');

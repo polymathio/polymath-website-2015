@@ -63,10 +63,10 @@ let svg = {
   _loopStar() {
     if (this.shootingStar) {
       let strokeLength = this.shootingStar.getTotalLength();
-      this.shootingStar.style.strokeDasharray =  (strokeLength / 3) + ' ' + (strokeLength * 2);
-      this.shootingStar.style.strokeDashoffset =  -strokeLength;
+      this.shootingStar.style.strokeDasharray =  (strokeLength * 0.25) + ' ' + (strokeLength * 3);
+      this.shootingStar.style.strokeDashoffset =  strokeLength * 0.25;
 
-      TweenMax.to(this.shootingStar, 1.3, {strokeDashoffset: -strokeLength * 3.5, opacity: 0.5, repeat: -1, ease: Power0.easeNone, repeatDelay: 5});
+      TweenMax.to(this.shootingStar, 1.3, {strokeDashoffset: -strokeLength * 3, opacity: 0.4, repeat: -1, ease: Power0.easeNone, repeatDelay: 4});
     }
   }
 };
