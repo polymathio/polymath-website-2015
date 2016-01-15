@@ -56,6 +56,10 @@ p, input, textarea, a, cite, label {
 a {
   color: color(black);
   transition: 0.2s;
+
+  &:hover, &:active, &:focus {
+    color: color(green);
+  }
 }
 
 strong {

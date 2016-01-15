@@ -1,4 +1,4 @@
-$float-break: 860px;
+$float-break: 940px;
 
 .blockquote {
   position: relative;
@@ -27,20 +27,29 @@ $float-break: 860px;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.24rem;
     line-height: 1.4em;
 
     @media screen and (max-width: break(s)) {
-      font-size: 1.25rem;
+      font-size: 1.16rem;
     }
   }
 
   cite {
     font-size: 0.834rem;
     font-style: normal;
+    
 
     @media screen and (max-width: break(s)) {
       font-size: 0.8rem;
+    }
+
+    span {
+      display: block;
+      line-height: 1em;
+      margin-top: 0em;
+      font-size: 0.9em;
+      padding-left: 1.4em;
     }
   }
 
@@ -66,7 +75,7 @@ $float-break: 860px;
 
   &--right {
     float: right;
-    margin-right: -110px;
+    margin-right: -130px;
 
     @media screen and (max-width: $float-break) {
       margin-right: 0;
@@ -80,7 +89,7 @@ $float-break: 860px;
 
   &--left {
     float: left;
-    margin-left: -110px;
+    margin-left: -130px;
 
     @media screen and (max-width: $float-break) {
       margin-left: 0;

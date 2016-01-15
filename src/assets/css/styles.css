@@ -871,6 +871,9 @@ a {
   -webkit-transition: 0.2s;
           transition: 0.2s;
 }
+a:hover, a:active, a:focus {
+  color: #90C4B3;
+}
 
 strong {
   font-weight: 400;
@@ -916,7 +919,7 @@ strong {
   color: #ffffff;
   z-index: 10;
 }
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 940px) {
   .blockquote {
     width: 300px;
   }
@@ -933,12 +936,12 @@ strong {
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.24rem;
   line-height: 1.4em;
 }
 @media screen and (max-width: 640px) {
   .blockquote p {
-    font-size: 1.25rem;
+    font-size: 1.16rem;
   }
 }
 .blockquote cite {
@@ -949,6 +952,13 @@ strong {
   .blockquote cite {
     font-size: 0.8rem;
   }
+}
+.blockquote cite span {
+  display: block;
+  line-height: 1em;
+  margin-top: 0em;
+  font-size: 0.9em;
+  padding-left: 1.4em;
 }
 .blockquote a {
   float: right;
@@ -969,9 +979,9 @@ strong {
 }
 .blockquote--right {
   float: right;
-  margin-right: -110px;
+  margin-right: -130px;
 }
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 940px) {
   .blockquote--right {
     margin-right: 0;
   }
@@ -984,9 +994,9 @@ strong {
 }
 .blockquote--left {
   float: left;
-  margin-left: -110px;
+  margin-left: -130px;
 }
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 940px) {
   .blockquote--left {
     margin-left: 0;
   }
@@ -1035,6 +1045,7 @@ strong {
 }
 .block--hero {
   height: 100%;
+  min-height: 480px;
 }
 @media screen and (max-width: 640px) {
   .block--hero {
@@ -1044,6 +1055,7 @@ strong {
 }
 .block--hero--small {
   height: 70%;
+  min-height: 480px;
 }
 @media screen and (max-width: 640px) {
   .block--hero--small {
@@ -2184,14 +2196,17 @@ Box Helpers
   display: block;
   padding: 0.66rem;
   text-decoration: none;
+  color: #1C1D27;
   opacity: 0.4;
 }
 .clients__slider-button:hover {
+  color: #1C1D27;
   opacity: 0.7;
 }
 .clients__slider-button.is-active {
   opacity: 1;
   pointer-events: none;
+  color: #1C1D27;
 }
 .clients__slider-button:before {
   display: block;
@@ -2577,7 +2592,7 @@ Box Helpers
 .nav__list {
   position: fixed;
   top: 4.7rem;
-  left: 1.5rem;
+  left: 0;
   width: 100%;
   margin: 0;
   padding: 0rem 0 4rem;
@@ -2615,6 +2630,7 @@ Box Helpers
   }
 }
 .nav__link:hover {
+  color: #ffffff;
   background: rgba(28, 29, 39, 0.5);
 }
 
