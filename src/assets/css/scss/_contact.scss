@@ -146,6 +146,14 @@
 
       font-size: 1.25rem;
 
+      @media screen and (max-width: break(s)) {
+        font-size: 1rem;
+      }
+
+      @media screen and (max-width: break(xs)) {
+        font-size: 0.85rem;
+      }
+
       &::-webkit-input-placeholder { color: rgba(color(white), 0.33); }
       &:-moz-placeholder { color: rgba(color(white), 0.33); }
       &::-moz-placeholder { color: rgba(color(white), 0.33); }
@@ -213,6 +221,10 @@
       transform: translate(0.5rem, -50%);
       opacity: 0;
       transition: 0.15s;
+
+      @media screen and (max-width: break(xs)) {
+        font-size: 0.75em;
+      }
     
       &.filled {
         opacity: 1;

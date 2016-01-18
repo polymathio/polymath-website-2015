@@ -2353,6 +2353,16 @@ Box Helpers
           transition: 0.15s;
   font-size: 1.25rem;
 }
+@media screen and (max-width: 640px) {
+  .contact__form input, .contact__form textarea {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .contact__form input, .contact__form textarea {
+    font-size: 0.85rem;
+  }
+}
 .contact__form input::-webkit-input-placeholder, .contact__form textarea::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.33);
 }
@@ -2415,6 +2425,11 @@ Box Helpers
   opacity: 0;
   -webkit-transition: 0.15s;
           transition: 0.15s;
+}
+@media screen and (max-width: 500px) {
+  .contact__form .parsley-errors-list {
+    font-size: 0.75em;
+  }
 }
 .contact__form .parsley-errors-list.filled {
   opacity: 1;
