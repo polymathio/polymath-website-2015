@@ -932,6 +932,11 @@ strong {
     margin: 2rem auto;
   }
 }
+@media screen and (max-width: 640px) {
+  .blockquote {
+    padding: 1.4rem;
+  }
+}
 .blockquote p {
   margin-bottom: 1.5rem;
   text-transform: uppercase;
@@ -1357,7 +1362,7 @@ strong {
   margin: 0 auto;
 }
 .container--small {
-  width: 92%;
+  width: 94%;
   max-width: 660px;
   margin: 0 auto;
 }

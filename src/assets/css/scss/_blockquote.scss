@@ -23,6 +23,10 @@ $float-break: 940px;
     margin: 2rem auto;
   }
 
+  @media screen and (max-width: break(s)) {
+    padding: 1.4rem;
+  }
+
   p {
     margin-bottom: 1.5rem;
     text-transform: uppercase;
